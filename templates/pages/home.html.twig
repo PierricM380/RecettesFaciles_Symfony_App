@@ -1,0 +1,176 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil -
+	{{ parent() }}
+{% endblock %}
+
+{% block nav %}
+	<nav class="row navbar navbar-expand-lg fixed-top navbar-dark bg-success">
+		<div
+			class="col-12 container-fluid">
+			<!-- Logo -->
+			<img
+			class="nav_logo img-fluid" src="/images/LogoGigi.png" alt="Memoji de Gigi">
+			<!-- Navbar button at lg breakpoint -->
+			<button class="navbar-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- Collapse area at lg breakpoint -->
+			<div class="collapse navbar-collapse mx-2" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="{{ path('home.index') }}">Accueil</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="{{ path('recipe.show.appetizer') }}">Apéritifs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="{{ path('recipe.show.dish') }}">Plats</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="{{ path('recipe.show.dessert') }}">Desserts</a>
+					</li>
+
+					{% if app.user %}
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('ingredient.index') }}">Mes ingrédients
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('recipe.index') }}">Mes recettes
+							</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								{{ app.user.fullName }}
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li>
+									<a class="dropdown-item" href="{{ path('user.edit', {id : app.user.id}) }}">Modifier mes informations</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{ path('user.edit.password', {id : app.user.id}) }}">Modifier mon mot de passe</a>
+								</li>
+								<li><hr class="dropdown-divider"></li>
+								<li>
+									<a class="dropdown-item" href="{{ path('security.logout') }}">Déconnexion</a>
+								</li>
+							</ul>
+						</li>
+					{% else %}
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('security.login') }}">Connexion</a>
+						</li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+{% block body %}
+	<header class="row">
+		<section class="col-12">
+			<h1>
+				<strong>Les Recettes Faciles de Gigi</strong>
+			</h1>
+		</section>
+	</header>
+	<div class="main_home row row-cols-1 row-md-2 g-3 m-lg-3">
+		<main
+			class="col-lg-8">
+			<!-- Presentation card -->
+			<section class="card shadow">
+				<video class="card-img-top" muted autoplay playsinline loop>
+					<source src="/videos/cook.mp4" type="video/mp4">
+					<source src="/videos/cook.mov" type="video/mov">
+					<source src="/videos/cook.WebM" type="video/WebM">
+					<source src="/videos/cook.ogv" type="video/ogv">
+					La vidéo ne peut être lu avec votre navigateur.
+				</video>
+				<h2 class="card-header">
+					<strong>Bienvenue chez Gigi</strong>
+				</h2>
+				<div class="main_prentation_card card-body">
+					<p class="card-text">
+						Ce site est dédié à toutes les personnes aimant la
+						<em>cuisine</em>
+						et partager un moment convivial autour de la
+						<em>table</em>.
+					</p>
+					<p class="card-text">
+						Qui ne s'est jamais posé la question... Que mange-t-on aujourd'hui ?
+					</p>
+					<p class="card-text">
+						Petit clin d'oeil aux
+						<em>femmes</em>
+						qui se la posent très souvent lorsque qu'après une journée bien remplie, il faut se mettre derrière les
+						<em>fourneaux</em>...
+					</p>
+					<p class="card-text">
+						Au
+						<em>menu</em>
+						vous trouverez quelques recettes faciles à réaliser, classées selon les catégories
+						<a href="{{ path('recipe.show.appetizer') }}" class="text-success">
+							<strong>apéritifs</strong>
+						</a>,
+						<a href="{{ path('recipe.show.dish') }}" class="text-success">
+							<strong>plats</strong>
+						</a>
+						et
+						<a href="{{ path('recipe.show.dessert') }}" class="text-success">
+							<strong>desserts</strong>
+						</a>.
+					</p>
+				</div>
+			</section>
+		</main>
+		<aside
+			class="col-lg-3">
+			<!-- Menus card -->
+			<section class="card shadow">
+				<h2 class="card-header">
+					<strong>Le Menu</strong>
+				</h2>
+				<div class="card-body">
+					<div
+						class="row row-cols-1 row-cols-lg-2 g-3 mx-2">
+						<!-- appetizer card -->
+						<div class="col-12">
+							<div class="clickable">
+								<a href="{{ path('recipe.show.appetizer') }}">
+									<h3 class="img-title">
+										<em>Les apéritifs</em>
+									</h3>
+									<img class="clickable_img img-fluid" src="/images/appetizer.jpg" alt="toats de saumon à la crème">
+								</a>
+							</div>
+						</div>
+						<!-- dish card -->
+						<div class="col-12">
+							<div class="clickable">
+								<a href="{{ path('recipe.show.dish') }}">
+									<h3 class="img-title">
+										<em>Les plats</em>
+									</h3>
+									<img class="clickable_img img-fluid" src="/images/dish.jpg" alt="tranches de viandes">
+								</a>
+							</div>
+						</div>
+						<!-- dessert card -->
+						<div class="col-12">
+							<div class="clickable">
+								<a href="{{ path('recipe.show.dessert') }}">
+									<h3 class="img-title">
+										<em>Les desserts</em>
+									</h3>
+									<img class="clickable_img img-fluid" src="/images/dessert.jpg" alt="Bûche chocolat dans une assiette">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</aside>
+	</div>
+{% endblock %}

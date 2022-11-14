@@ -1,19 +1,61 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<html lang='fr'>
+	<head>
+		<meta charset="UTF-8">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}Les Recettes Faciles De Gigi
+			{% endblock %}
+		</title>
+		<meta name="author" content="Pierric Marye">
+		<meta name="description" content="Site dédié aux recettes simples et rapides à préparer.">
+		<meta name="Copyright" content="Les Recettes Faciles De Gigi">
+		<meta name="Keywords" content="Gigi, recettes, menu, entrées, plats, desserts, table, fourneaux, partager, manger, préparer, caramel, cookies, melon, pastèque, muffins, panna cotta, twix, ingrédients, préparation, rilettes, champignons, cake, chèvre, carbonara, quiche, bûche, filet,
+																								        poulet, pizzas, bolognaise, tartiflette, couscous, spaghetti, Salades composées, Présentation, fruits, gésiers, avocat, fromages, mot de passe, informations,">
+		<meta
+		name="Rating" content="general">
+		{# Content to add #}
+		<meta name="Identifier-Url" content="">
+		<meta name="Robots" content="allow">
+		<meta name="Distribution" content="global">
+		<meta
+		name="Category" content="family">
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		<!-- tags SEO Facebook -->
+		<meta property="og:title" content="Les Recettes Faciles De Gigi">
+		<meta property="og:description" content="Site dédié aux recettes simples et rapides à préparer.">
+		<meta property="ogimage" content="/images/LogoGigi.png">
+		<meta
+		property="og:type" content="website">
+		{# Content to add #}
+		<meta
+		property="og:url" content="">
+		<!-- DEPENDENCIES-->
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+		<link rel="icon" href="/images/LogoGigi.png" type="image/png" sizes="16x16">
+		<link rel="stylesheet" href="/bootstrap5.0.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/style.css">
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+		<script src="/bootstrap5.0.2/js/bootstrap.bundle.min.js"></script>
+		<script src="https://kit.fontawesome.com/5528e9fcbf.js" crossorigin="anonymous"></script>
+		<noscript>Veuillez, s'il vous plaît, activer JavaScript pour pouvoir bénéficier de toutes lesfonctionnalités
+		</noscript>
+	</head>
+
+	<body class="container-fluid">
+		{% block nav %}
+			{% include "partials/_nav.html.twig" %}
+		{% endblock %}
+
+		{% block body %}{% endblock %}
+
+		{% include "partials/_footer.html.twig" %}
+	</body>
 </html>

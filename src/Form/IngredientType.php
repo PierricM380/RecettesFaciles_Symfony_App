@@ -30,13 +30,6 @@ class IngredientType extends AbstractType
                     new Assert\Length(['min' => 2, 'max' => 50]),
                     new Assert\NotBlank()
                 ]
-            ])
-            
-            ->add('submit', SubmitType::class, [
-                'attr' => [
-                    'class' => 'btn btn-success shadow mt-4'
-                ],
-                'label' => 'Créer mon ingrédient'
             ]);
     }
 

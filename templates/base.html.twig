@@ -1,61 +1,39 @@
 <!DOCTYPE html>
 <html lang='fr'>
-	<head>
-		<meta charset="UTF-8">
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>
-			{% block title %}Les Recettes Faciles De Gigi
-			{% endblock %}
-		</title>
-		<meta name="author" content="Pierric Marye">
-		<meta name="description" content="Site dédié aux recettes simples et rapides à préparer.">
-		<meta name="Copyright" content="Les Recettes Faciles De Gigi">
-		<meta name="Keywords" content="Gigi, recettes, menu, entrées, plats, desserts, table, fourneaux, partager, manger, préparer, caramel, cookies, melon, pastèque, muffins, panna cotta, twix, ingrédients, préparation, rilettes, champignons, cake, chèvre, carbonara, quiche, bûche, filet,
-																								        poulet, pizzas, bolognaise, tartiflette, couscous, spaghetti, Salades composées, Présentation, fruits, gésiers, avocat, fromages, mot de passe, informations,">
-		<meta
-		name="Rating" content="general">
-		{# Content to add #}
-		<meta name="Identifier-Url" content="">
-		<meta name="Robots" content="allow">
-		<meta name="Distribution" content="global">
-		<meta
-		name="Category" content="family">
 
-		<!-- tags SEO Facebook -->
-		<meta property="og:title" content="Les Recettes Faciles De Gigi">
-		<meta property="og:description" content="Site dédié aux recettes simples et rapides à préparer.">
-		<meta property="ogimage" content="/images/LogoGigi.png">
-		<meta
-		property="og:type" content="website">
-		{# Content to add #}
-		<meta
-		property="og:url" content="">
-		<!-- DEPENDENCIES-->
-		{% block stylesheets %}
-			{{ encore_entry_link_tags('app') }}
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		{% block title %}Les Recettes Faciles De Gigi
 		{% endblock %}
-		<link rel="icon" href="/images/LogoGigi.png" type="image/png" sizes="16x16">
-		<link rel="stylesheet" href="/bootstrap5.0.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/style.css">
+	</title>
 
-		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
-		{% endblock %}
-		<script src="/bootstrap5.0.2/js/bootstrap.bundle.min.js"></script>
-		<script src="https://kit.fontawesome.com/5528e9fcbf.js" crossorigin="anonymous"></script>
-		<noscript>Veuillez, s'il vous plaît, activer JavaScript pour pouvoir bénéficier de toutes lesfonctionnalités
-		</noscript>
-	</head>
+	{% block head %}
+	{% endblock %}
 
-	<body class="container-fluid">
-		{% block nav %}
-			{% include "partials/_nav.html.twig" %}
-		{% endblock %}
+	<!-- DEPENDENCIES-->
+	<link rel="icon" href="/images/LogoGigi.png" type="image/png" sizes="16x16">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link rel="stylesheet" href="/style.css">
+	{% block stylesheets %}
+	{% endblock %}
+</head>
 
-		{% block body %}{% endblock %}
+<body class="container-fluid">
+	{% block body %}
+	{% endblock %}
 
-		{% include "partials/_footer.html.twig" %}
-	</body>
+	{% include "partials/_footer.html.twig" %}
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/5528e9fcbf.js" crossorigin="anonymous"></script>
+	<noscript>Veuillez, s'il vous plaît, activer JavaScript pour pouvoir bénéficier de toutes lesfonctionnalités
+	</noscript>
+	{% block javascripts %}
+	{% endblock %}
+</body>
+
 </html>

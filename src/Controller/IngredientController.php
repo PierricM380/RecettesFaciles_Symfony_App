@@ -23,7 +23,7 @@ class IngredientController extends AbstractController
         $ingredients = $paginator->paginate(
             $repository->findAll(),
             $request->query->getInt('page', 1),
-            10
+            5
         );
 
         return $this->render('pages/ingredient/index.html.twig', [

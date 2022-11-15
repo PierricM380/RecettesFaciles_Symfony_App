@@ -9,29 +9,26 @@ body {
         'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell,
         'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: whitesmoke;
+    background-color: #ffffff;
+    min-height: 100vh;
     overflow-x: hidden;
     padding: 0;
     margin: 0;
 }
 
 /* NAVIGATION BAR */
-nav {
-    background-color: rgb(111, 66, 193);
-    box-shadow: 0 0 5px rgb(63, 63, 68);
-}
 
 .nav_logo {
-    width: 50px;
+    width: 75px;
     height: auto;
-    margin: 10px;
+    margin-inline: 20px;
 }
 
 /* HEADER */
 header {
     position: relative;
-    top: 91px;
-    height: 200px;
+    top: 100px;
+    height: 225px;
     display: flex;
     align-items: center;
     background-image: url('/images/rosemary.jpg');
@@ -42,7 +39,6 @@ header {
 
 h1 {
     font-size: 1.9rem;
-    font-family: cursive;
     font-style: italic;
     text-align: center;
 }
@@ -55,6 +51,7 @@ h3 {
     font-size: 1.2rem;
 }
 
+h1,
 h2,
 h3 {
     font-family: cursive;
@@ -76,8 +73,13 @@ h3 {
 }
 
 /* HOME */
-.main_home a {
+.main_home main a {
     text-decoration: none;
+    font-weight: 300;
+}
+
+.main_home main a:hover {
+    text-decoration: underline;
 }
 
 .main_home .clickable:hover {
@@ -157,7 +159,7 @@ footer>div {
 
     /* NAVIGATION BAR */
     .nav_logo {
-        width: 75px;
+        width: 100px;
         height: auto;
     }
 
@@ -178,8 +180,8 @@ footer>div {
     /* HEADER */
     header {
         position: relative;
-        top: 117px;
-        height: 350px;
+        top: 120px;
+        height: 375px;
     }
 
     h1 {

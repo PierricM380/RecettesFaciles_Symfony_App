@@ -1,151 +1,157 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Mes ingrédients -
-	{{ parent() }}
-{% endblock %}
-
-{% block nav %}
-	<nav class="row navbar navbar-expand-lg fixed-top navbar-dark bg-success">
-		<div
-			class="col-12 container-fluid">
-			<!-- Logo -->
-			<img
-			class="nav_logo img-fluid" src="/images/LogoGigi.png" alt="Memoji de Gigi">
-			<!-- Navbar button at lg breakpoint -->
-			<button class="navbar-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<!-- Collapse area at lg breakpoint -->
-			<div class="collapse navbar-collapse mx-2" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="{{ path('home.index') }}">Accueil</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="{{ path('recipe.show.appetizer') }}">Apéritifs</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="{{ path('recipe.show.dish') }}">Plats</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="{{ path('recipe.show.dessert') }}">Desserts</a>
-					</li>
-
-					{% if app.user %}
-						<li class="nav-item">
-							<a class="nav-link active" href="{{ path('ingredient.index') }}">Mes ingrédients
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ path('recipe.index') }}">Mes recettes
-							</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								{{ app.user.fullName }}
-							</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li>
-									<a class="dropdown-item" href="{{ path('user.edit', {id : app.user.id}) }}">Modifier mes informations</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="{{ path('user.edit.password', {id : app.user.id}) }}">Modifier mon mot de passe</a>
-								</li>
-								<li><hr class="dropdown-divider"></li>
-								<li>
-									<a class="dropdown-item" href="{{ path('security.logout') }}">Déconnexion</a>
-								</li>
-							</ul>
-						</li>
-					{% else %}
-						<li class="nav-item">
-							<a class="nav-link" href="{{ path('security.login') }}">Connexion</a>
-						</li>
-					{% endif %}
-				</ul>
-			</div>
-		</div>
-	</nav>
+{{ parent() }}
 {% endblock %}
 
 {% block body %}
-	<header class="row">
-		<section class="col-12">
-			<h1>
-				<strong>Mes Ingrédients</strong>
-			</h1>
-		</section>
-	</header>
-	<main class="main_ingredients row">
-		{% if not ingredients.items is same as([]) %}
-			<section class="col-12 col-lg-9">
-				<div class="count">
-					<p>il y a
-						{{ ingredients.getTotalItemCount }}
-						ingrédient(s) au total</p>
-				</div>
+<!-- NAVIGATION BAR -->
+<nav class="row navbar navbar-expand-lg fixed-top navbar-dark bg-success shadow">
+	<div class="col-12 container-fluid">
+		<!-- Logo -->
+		<img class="nav_logo img-fluid" src="/images/LogoGigi.png" alt="Memoji de Gigi">
+		<!-- Navbar button at lg breakpoint -->
+		<button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- Collapse area at lg breakpoint -->
+		<div class="collapse navbar-collapse mx-4" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('home.index') }}">Accueil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('recipe.show.appetizer') }}">Apéritifs</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('recipe.show.dish') }}">Plats</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('recipe.show.dessert') }}">Desserts</a>
+				</li>
 
-				<a href="{{ path('ingredient.new') }}" class="btn btn-success shadow">
-					Créer un ingrédient
-				</a>
+				{% if app.user %}
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ path('ingredient.index') }}">Mes ingrédients
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('recipe.index') }}">Mes recettes
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						{{ app.user.fullName }}
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li>
+							<a class="dropdown-item" href="{{ path('user.edit', {id : app.user.id}) }}">Modifier mes informations</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('user.edit.password', {id : app.user.id}) }}">Modifier mon mot de passe</a>
+						</li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('security.logout') }}">Déconnexion</a>
+						</li>
+					</ul>
+				</li>
+				{% else %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('security.login') }}">Connexion</a>
+				</li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+</nav>
 
-				{% for message in app.flashes('success') %}
-					<div class="alert alert-success mt-4">
-						{{ message }}
-					</div>
-				{% endfor %}
+<!-- HEADER -->
+<header class="row">
+	<section class="col-12">
+		<h1>
+			<strong>Mes Ingrédients</strong>
+		</h1>
+	</section>
+</header>
 
+<!-- MAIN -->
+<main class="main_ingredients row">
+	{% if not ingredients.items is same as([]) %}
+	<!-- If ingredients list is not empty -->
+	<div class="col-11 col-lg-9">
+		<div>
+			<p>il y a
+				{{ ingredients.getTotalItemCount }}
+				ingrédient(s) au total
+			</p>
+		</div>
 
-				<div class="table-responsive">
-					<table class="table table-success table-striped table-bordered table-hover mt-4">
-						<thead>
-							<tr>
-								<th scope="col">Nom</th>
-								<th scope="col">Date de création</th>
-								<th scope="col">Édition</th>
-								<th scope="col">Suppression</th>
-							</tr>
-						</thead>
-						<tbody>
-							{% for ingredient in ingredients %}
-								<tr>
-									<td>{{ ingredient.name }}</td>
-									<td>{{ ingredient.createdAt|date('d/m/Y') }}</td>
-									<td>
-										<a href="{{ path('ingredient.edit', {id: ingredient.id}) }}" class="btn shadow">
-											Modifier
-										</a>
-									</td>
-									<td>
-										<a href="{{ path('ingredient.delete', {id: ingredient.id}) }}" class="btn btn-danger shadow">
-											Supprimer
-										</a>
-									</td>
-								</tr>
-							{% endfor %}
-						</tbody>
-					</table>
-				</div>
+		<a href="{{ path('ingredient.new') }}" class="btn btn-success shadow">
+			Créer un ingrédient
+		</a>
 
-				<div class="navigation d-flex justify-content-center text-success mt-4">
-					{{ knp_pagination_render(ingredients) }}
-				</div>
+		{% for message in app.flashes('success') %}
+		<div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+			{{ message }}
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		{% endfor %}
 
-			</section>
-		{% else %}
-			<section class="col-12 col-lg-9">
-				<p>Il n'y a pas d'ingrédients</p>
+		<!-- Ingredients list -->
+		<div class="table-responsive">
+			<table class="table align-middle table-success table-striped table-bordered table-hover mt-4">
+				<thead>
+					<tr>
+						<th class="text-center" scope="col">Nom</th>
+						<th class="text-center" scope="col">Date de création</th>
+						<th class="text-center" scope="col">Édition</th>
+						<th class="text-center" scope="col">Suppression</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for ingredient in ingredients %}
+					<tr>
+						<td class="text-center">{{ ingredient.name|title }}</td>
+						<td class="text-center">{{ ingredient.createdAt|date('d/m/Y') }}</td>
+						<td class="text-center">
+							<a href="{{ path('ingredient.edit', {id: ingredient.id}) }}" class="btn shadow">
+								Modifier
+							</a>
+						</td>
+						<td class="text-center">
+							<a href="{{ path('ingredient.delete', {id: ingredient.id}) }}" class="btn btn-danger shadow">
+								Supprimer
+							</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<!-- Pagination -->
+		<div class="navigation d-flex justify-content-center text-success mt-4">
+			{{ knp_pagination_render(ingredients) }}
+		</div>
 
-				{% for message in app.flashes('success') %}
-					<div class="alert alert-success mt-4">
-						{{ message }}
-					</div>
-				{% endfor %}
+	</div>
+	{% else %}
+	<!-- If ingredients list is empty -->
+	<div class="col-11 col-lg-9">
+		<p>Il n'y a pas d'ingrédients</p>
+		<a href="{{ path('ingredient.new') }}" class="btn btn-success shadow">
+			Créer un ingrédient
+		</a>
 
-				<a href="{{ path('ingredient.new') }}" class="btn btn-success shadow">
-					Créer un ingrédient
-				</a>
-			</section>
-		{% endif %}
-	</main>
+		{% for message in app.flashes('success') %}
+		<div class="alert alert-success alert-dismissible fade showmt-4" role="alert">
+			{{ message }}
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		{% endfor %}
+	</div>
+	{% endif %}
+</main>
 {% endblock %}

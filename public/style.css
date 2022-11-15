@@ -21,6 +21,7 @@ h1 {
     font-size: 1.9rem;
     font-style: italic;
     text-align: center;
+    color: #6f42c1;
 }
 
 h2 {
@@ -48,7 +49,7 @@ h3 {
 /* HEADER */
 header {
     position: relative;
-    top: 100px;
+    top: 91px;
     height: 225px;
     display: flex;
     align-items: center;
@@ -69,7 +70,6 @@ header {
     top: 121px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 /* HOME */
@@ -118,14 +118,14 @@ header {
 
 .main_home .clickable_img {
     border-radius: 15px;
-    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    box-shadow: 0px 0px 10px #000000;
 }
 
 .main_home .img-title {
     position: absolute;
     margin-top: 5px;
     margin-left: 10px;
-    color: white;
+    color: #ffffff;
 }
 
 /* RECIPES CATEGORIES PAGES */
@@ -134,24 +134,28 @@ header {
 }
 
 /* INGREDIENTS USER PAGES */
+.main_ingredients {
+    height: 60vh;
+    padding-top: 25px;
+}
 .main_ingredients td:nth-child(3)>a {
-    background-color: rgb(177, 38, 177);
-    color: whitesmoke;
+    background-color: #b126b1;
+    color: #f5f5f5;
 }
 
 .main_ingredients td:nth-child(3)>a:hover {
-    background-color: rgb(140, 32, 140);
+    background-color: #8c208c;
 }
 
 /* RECIPES USER PAGES */
 .main_recipes td:nth-child(4)>a {
-    background-color: rgb(177, 38, 177);
-    color: whitesmoke;
+    background-color: #b126b1;
+    color: #f5f5f5;
 }
 
 .main_recipes td:nth-child(4)>a:hover {
     background-color: rgb(140, 32, 140);
-    color: whitesmoke;
+    color: #f5f5f5;
 }
 
 .main_recipes .form-image img {
@@ -175,7 +179,7 @@ footer {
     position: relative;
     top: 157px;
     height: 50px;
-    background-color: rgb(111, 66, 193);
+    background-color: #6f42c1;
 }
 
 footer>div {
@@ -204,7 +208,7 @@ footer>div {
     /* HEADER */
     header {
         position: relative;
-        top: 120px;
+        top: 115px;
         height: 375px;
     }
 
@@ -234,6 +238,12 @@ footer>div {
 
     .main_home .menu_card {
         padding-block: 50px;
+    }
+
+    /* INGREDIENTS PAGE */
+    .main_ingredients {
+        height: 50vh;
+        padding-top: 50px;
     }
 
     /* LOGIN PAGE*/

@@ -56,23 +56,6 @@ class RecipeType extends AbstractType
                 ]
             ])
 
-            ->add('time', IntegerType::class, [
-                'attr' => [
-                    'class' => 'form-control',
-                    'min' => 1,
-                    'max' => 1440,
-                ],
-                'required' => false,
-                'label' => 'Temps (en minutes)',
-                'label_attr' => [
-                    'class' => 'form-label mt-4'
-                ],
-                'constraints' => [
-                    new Assert\Positive(),
-                    new Assert\LessThan(1441)
-                ]
-            ])
-
             ->add('description', TextareaType::class, [
                 'attr' => [
                     'class' => 'form-control',
@@ -96,28 +79,27 @@ class RecipeType extends AbstractType
                         ->orderBy('i.name', 'ASC');
                 },
                 'required' => true,
+                'attr' => [
+                    'class' => 'form-select',
+                ],
+                'multiple' => true,
+                'expanded' => false,
                 'label' => 'Les ingrédients',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ],
                 'choice_label' => 'name',
-                'multiple' => true,
-                'expanded' => true,
             ])
 
             ->add('imageFile', VichImageType::class, [
+                'attr' => [
+                    'class' => 'form-control mb-1'
+                ],
                 'label' => 'Image de la recette',
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ],
                 'required' => false
-            ])
-
-            ->add('submit', SubmitType::class, [
-                'attr' => [
-                    'class' => 'btn btn-success shadow mt-4'
-                ],
-                'label' => 'Créer ma recette'
             ]);
     }
 

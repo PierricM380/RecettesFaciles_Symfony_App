@@ -7,7 +7,7 @@
 {% block body %}
 <!-- NAVIGATION BAR -->
 <nav class="row navbar navbar-expand-lg fixed-top navbar-dark bg-success shadow">
-	<div class="col-12 container-fluid">
+	<div class="container-fluid">
 		<!-- Logo -->
 		<img class="nav_logo img-fluid" src="/images/LogoGigi.png" alt="Memoji de Gigi">
 		<!-- Navbar button at lg breakpoint -->
@@ -136,7 +136,7 @@
 	</div>
 	{% else %}
 	<!-- If recipes list is empty -->
-	<div class="col-12 col-lg-9">
+	<div class="col-11 col-lg-9">
 		<p>Il n'y a pas de recettes</p>
 
 		<a href="{{ path('recipe.new') }}" class="btn btn-success shadow">

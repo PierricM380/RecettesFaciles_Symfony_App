@@ -145,6 +145,10 @@ header {
     color: #1b8252;
 }
 
+.main_recipes h2 {
+    color: #6f42c1;
+}
+
 /* INGREDIENTS PAGES */
 .main_ingredients td:nth-child(3)>a {
     background-color: #b126b1;
@@ -167,7 +171,7 @@ header {
 }
 
 .main_recipes .form-image img {
-    width: 375px;
+    width: 200px;
     padding-top: 10px;
     padding-right: 10px;
 }
@@ -268,7 +272,7 @@ footer>div {
     }
 
     .main_recipes .form-image img {
-        width: 500px;
+        width: 300px;
     }
 
     /* FOOTER */

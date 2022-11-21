@@ -78,9 +78,9 @@ class RecipeType extends AbstractType
                     return $r->createQueryBuilder('i')
                         ->orderBy('i.name', 'ASC');
                 },
-                'required' => true,
+                'required' => false,
                 'attr' => [
-                    'class' => 'form-select',
+                    'class' => 'form-select form-image',
                 ],
                 'multiple' => true,
                 'expanded' => false,
@@ -93,7 +93,7 @@ class RecipeType extends AbstractType
 
             ->add('imageFile', VichImageType::class, [
                 'attr' => [
-                    'class' => 'form-control mb-1'
+                    'class' => 'form-control mb-2'
                 ],
                 'label' => 'Image de la recette',
                 'label_attr' => [

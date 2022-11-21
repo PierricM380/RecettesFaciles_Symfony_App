@@ -76,13 +76,15 @@ header {
 
 .main_login,
 .main_ingredients,
-.main_recipes {
+.main_recipes,
+.main_informations {
     height: 90vh;
 }
 
 .main_login .form,
 .main_ingredients .form,
-.main_recipes_new .form {
+.main_recipes_new .form,
+.main_informations .form {
     padding: 25px;
 }
 
@@ -224,6 +226,7 @@ footer>div {
     .main_recipes,
     .main_recipes_new,
     .main_login,
+    .main_informations,
     .main_ingredients,
     .main_informations {
         position: relative;
@@ -233,7 +236,8 @@ footer>div {
 
     .main_login,
     .main_ingredients,
-    .main_recipes {
+    .main_recipes,
+    .main_informations {
         height: 100vh;
     }
 

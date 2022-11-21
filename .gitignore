@@ -25,3 +25,5 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+migrations/Version20221121062921.php
+migrations/Version20221121062921.php

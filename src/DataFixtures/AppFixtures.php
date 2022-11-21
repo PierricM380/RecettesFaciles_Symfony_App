@@ -5,8 +5,6 @@ namespace App\DataFixtures;
 use Faker\Factory;
 use App\Entity\User;
 use Faker\Generator;
-use App\Entity\Recipe;
-use App\Entity\Ingredient;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
@@ -26,18 +24,16 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        // Users
-        $users = [];
-
+        // User
         $user = new User();
-            $user
-                ->setFullName("Ghislaine Marye")
-                ->setPseudo("Gigi66380")
-                ->setEmail("ghislaine.marye@gmail.com")
-                ->setRoles(['ROLE_USER'])
-                ->setPlainPassword('!PGEL?66380');
+        $user
+            ->setFullName("Ghislaine Marye")
+            ->setPseudo("Gigi66380")
+            ->setEmail("ghislaine.marye@gmail.com")
+            ->setRoles(['ROLE_USER'])
+            ->setPlainPassword('!PGEL?66380');
 
-            $users[] = $user;
-            $manager->persist($user);
+        $manager->persist($user);
+        $manager->flush();
     }
 }

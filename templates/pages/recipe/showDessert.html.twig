@@ -1,22 +1,21 @@
 {% extends "base.html.twig" %}
 
 {% block title %}Desserts -
-	{{ parent() }}
+{{ parent() }}
 {% endblock %}
 
-{% block nav %}
-<nav class="row navbar navbar-expand-lg fixed-top navbar-dark bg-success">
-	<div
-		class="col-12 container-fluid">
+{% block body %}
+<!-- NAVIGATION BAR -->
+<nav class="row navbar navbar-expand-lg fixed-top navbar-dark bg-success shadow">
+	<div class="container-fluid">
 		<!-- Logo -->
-		<img
-		class="nav_logo img-fluid" src="/images/LogoGigi.png" alt="Memoji de Gigi">
+		<img class="nav_logo img-fluid" src="/images/LogoGigi.png" alt="Memoji de Gigi">
 		<!-- Navbar button at lg breakpoint -->
-		<button class="navbar-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<!-- Collapse area at lg breakpoint -->
-		<div class="collapse navbar-collapse mx-2" id="navbarSupportedContent">
+		<div class="collapse navbar-collapse mx-4" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
 					<a class="nav-link" aria-current="page" href="{{ path('home.index') }}">Accueil</a>
@@ -32,81 +31,81 @@
 				</li>
 
 				{% if app.user %}
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path('ingredient.index') }}">Mes ingrédients
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path('recipe.index') }}">Mes recettes
-						</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							{{ app.user.fullName }}
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li>
-								<a class="dropdown-item" href="{{ path('user.edit', {id : app.user.id}) }}">Modifier mes informations</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="{{ path('user.edit.password', {id : app.user.id}) }}">Modifier mon mot de passe</a>
-							</li>
-							<li><hr class="dropdown-divider"></li>
-							<li>
-								<a class="dropdown-item" href="{{ path('security.logout') }}">Déconnexion</a>
-							</li>
-						</ul>
-					</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('ingredient.index') }}">Mes ingrédients
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('recipe.index') }}">Mes recettes
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						{{ app.user.fullName }}
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li>
+							<a class="dropdown-item" href="{{ path('user.edit', {id : app.user.id}) }}">Modifier mes informations</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('user.edit.password', {id : app.user.id}) }}">Modifier mon mot de passe</a>
+						</li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('security.logout') }}">Déconnexion</a>
+						</li>
+					</ul>
+				</li>
 				{% else %}
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path('security.login') }}">Connexion</a>
-					</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('security.login') }}">Connexion</a>
+				</li>
 				{% endif %}
 			</ul>
 		</div>
 	</div>
 </nav>
-{% endblock %}
-
-{% block body %}
-	<header class="row">
-		<section class="col-12">
-			<h1>
-				<strong>Les Desserts</strong>
-			</h1>
-		</section>
-	</header>
-
-	<main class="main_recipes row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mx-1">
-		{% for recipe in recipes %}
-			<article class="col">
-				<div class="card g-0 shadow">
-					<img src="{{ vich_uploader_asset(recipe, 'imageFile') }}" class="card-img-top">
-					<h2 class="card-header text-white bg-success">{{ recipe.name|title }}</h2>
-					<div class="card-body bg-light">
-						<div class="row d-flex flex-column align-items-center">
-							<section class="col-8 card border-success shadow mb-3 g-0">
-								<h3 class="card-header text-success">Ingrédients</h3>
-								<div class="card-body d-flex justify-content-center">
-									<ul>
-										{% for ingredient in recipe.ingredients %}
-											<li>{{ ingredient.name }}</li>
-										{% endfor %}
-									</ul>
-								</div>
-							</section>
-
-							<section class="col-11 card border-success shadow g-0 mb-3">
-								<h3 class="card-header text-success">Préparation</h3>
-								<div class="card-body">
-									<p class="card-text">{{ recipe.description }}</p>
-								</div>
-							</section>
+<!-- HEADER -->
+<header class="row">
+	<section class="col-12">
+		<h1>
+			<strong>Les Desserts</strong>
+		</h1>
+	</section>
+</header>
+<!-- MAIN -->
+<main class="main_recipes row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mx-1">
+	{% for recipe in recipes %}
+	<article class="col">
+		<div class="card g-0 shadow">
+			<img src="{{ vich_uploader_asset(recipe, 'imageFile') }}" class="card-img-top">
+			<h2 class="card-header text-white bg-success">{{ recipe.name|title }}</h2>
+			<div class="card-body bg-light">
+				<div class="row d-flex flex-column align-items-center">
+					<section class="col-8 card border-success shadow mb-3 g-0">
+						<h3 class="card-header text-success">Ingrédients</h3>
+						<div class="card-body d-flex justify-content-center">
+							<ul>
+								{% for ingredient in recipe.ingredients %}
+								<li>{{ ingredient.name }}</li>
+								{% endfor %}
+							</ul>
 						</div>
-					</div>
+					</section>
+
+					<section class="col-11 card border-success shadow g-0 mb-3">
+						<h3 class="card-header text-success">Préparation</h3>
+						<div class="card-body">
+							<p class="card-text">{{ recipe.description }}</p>
+						</div>
+					</section>
 				</div>
-			</article>
-		{% endfor %}
-	</main>
+			</div>
+		</div>
+	</article>
+	{% endfor %}
+</main>
 
 {% endblock %}

@@ -36,7 +36,7 @@ h3 {
 h1,
 h2,
 h3 {
-    font-family: cursive;
+    font-family: noteworthy;
     font-weight: bold;
 }
 
@@ -63,6 +63,7 @@ header {
 /* MAINS */
 .main_home,
 .main_recipes,
+.main_recipes_new,
 .main_login,
 .main_ingredients,
 .main_informations {
@@ -73,16 +74,23 @@ header {
     padding-top: 25px;
 }
 
+.main_login,
 .main_ingredients,
 .main_recipes {
     height: 90vh;
 }
 
+.main_login .form,
+.main_ingredients .form,
+.main_recipes_new .form {
+    padding: 25px;
+}
+
 /* HOME */
 .main_home h2 {
     color: #1b8252;
-    margin-bottom: 25px;
     text-align: center;
+    margin-bottom: 25px;
 }
 
 .main_home p {
@@ -143,10 +151,6 @@ header {
 
 .main_ingredients td:nth-child(3)>a:hover {
     background-color: #8c208c;
-}
-
-.main_ingredients .form {
-    padding: 25px;
 }
 
 /* RECIPES USER PAGES */
@@ -218,6 +222,7 @@ footer>div {
     /* MAIN */
     .main_home,
     .main_recipes,
+    .main_recipes_new,
     .main_login,
     .main_ingredients,
     .main_informations {
@@ -226,9 +231,16 @@ footer>div {
         padding-top: 50px;
     }
 
+    .main_login,
     .main_ingredients,
     .main_recipes {
         height: 100vh;
+    }
+
+    .main_login .form,
+    .main_ingredients .form,
+    .main_recipes_new .form {
+        padding: 50px;
     }
 
     /* HOME PAGE */
@@ -245,9 +257,6 @@ footer>div {
     }
 
     /* INGREDIENTS PAGE */
-    .main_ingredients .form {
-        padding: 50px;
-    }
 
     /* LOGIN PAGE*/
     .main_login {

@@ -4,13 +4,12 @@
 	{{ parent() }}
 {% endblock %}
 
-{% block nav %}
+{% block body %}
+	<!--NAVIGATION BAR -->
 <nav class="row navbar navbar-expand-lg fixed-top navbar-dark bg-success">
-	<div
-		class="col-12 container-fluid">
+	<div class="col-12 container-fluid">
 		<!-- Logo -->
-		<img
-		class="nav_logo img-fluid" src="/images/LogoGigi.png" alt="Memoji de Gigi">
+		<img class="nav_logo img-fluid" src="/images/LogoGigi.png" alt="Memoji de Gigi">
 		<!-- Navbar button at lg breakpoint -->
 		<button class="navbar-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -32,50 +31,54 @@
 				</li>
 
 				{% if app.user %}
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path('ingredient.index') }}">Mes ingrédients
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="{{ path('recipe.index') }}">Mes recettes
-						</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							{{ app.user.fullName }}
-						</a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li>
-								<a class="dropdown-item" href="{{ path('user.edit', {id : app.user.id}) }}">Modifier mes informations</a>
-							</li>
-							<li>
-								<a class="dropdown-item" href="{{ path('user.edit.password', {id : app.user.id}) }}">Modifier mon mot de passe</a>
-							</li>
-							<li><hr class="dropdown-divider"></li>
-							<li>
-								<a class="dropdown-item" href="{{ path('security.logout') }}">Déconnexion</a>
-							</li>
-						</ul>
-					</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('ingredient.index') }}">Mes ingrédients
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ path('recipe.index') }}">Mes recettes
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						{{ app.user.fullName }}
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li>
+							<a class="dropdown-item" href="{{ path('user.edit', {id : app.user.id}) }}">Modifier mes informations</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('user.edit.password', {id : app.user.id}) }}">Modifier mon mot de passe</a>
+						</li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('security.logout') }}">Déconnexion</a>
+						</li>
+					</ul>
+				</li>
 				{% else %}
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path('security.login') }}">Connexion</a>
-					</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('security.login') }}">Connexion</a>
+				</li>
 				{% endif %}
 			</ul>
 		</div>
 	</div>
 </nav>
-{% endblock %}
 
-{% block body %}
-	<header class="row">
-		<section class="col-12">
-			<h1><strong>Modifier une recette</strong></h1>
-		</section>
-	</header>
-	<main class="main_recipes row">
-		<section class="col-12 col-lg-9">
+<!-- HEADER -->
+<header class="row">
+	<section class="col-12">
+		<h1><strong>Créer une recette</strong></h1>
+	</section>
+</header>
+
+<!-- MAIN -->
+<main class="main_recipes_new row">
+	<div class="col-11 col-lg-7">
+		<div class="form card shadow">
 			{{ form_start(form) }}
 			<div class="form-group">
 				{{ form_label(form.name) }}
@@ -94,14 +97,6 @@
 			</div>
 
 			<div class="form-group">
-				{{ form_label(form.time) }}
-				{{ form_widget(form.time) }}
-				<div class="form-error">
-					{{ form_errors(form.time) }}
-				</div>
-			</div>
-
-			<div class="form-group">
 				{{ form_label(form.description) }}
 				{{ form_widget(form.description) }}
 				<div class="form-error">
@@ -109,23 +104,24 @@
 				</div>
 			</div>
 
-			<div class="form-image">
-				{{ form_row(form.imageFile) }}
-			</div>
-
-
 			<div class="form-group mt-4">
-				<div class="d-flex d-flex flex-wrap">
-					{% for field in form.ingredients %}
-						<div style="min-width: 20%">
-							{{ form_widget(field) }}
-							{{ form_label(field) }}
-						</div>
-					{% endfor %}
-				</div>
+				{{ form_row(form.ingredients) }}
 			</div>
 
+			<div class="form-group">
+				{{ form_label(form.imageFile) }}
+				{{ form_widget(form.imageFile) }}
+			</div>
+
+			<div class="form-group pt-4">
+				<button type="submit" class='btn btn-success shadow me-4'>Créer</button>
+				<a href="{{ path('recipe.index') }}" class="btn btn-danger shadow">
+					Annuler
+				</a>
+			</div>
 			{{ form_end(form) }}
-		</section>
-	</main>
+		</div>
+
+	</div>
+</main>
 {% endblock %}

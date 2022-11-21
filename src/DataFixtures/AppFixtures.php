@@ -32,7 +32,7 @@ class AppFixtures extends Fixture
         $user = new User();
             $user
                 ->setFullName("Ghislaine Marye")
-                ->setPseudo("Ghich66380")
+                ->setPseudo("Gigi66380")
                 ->setEmail("ghislaine.marye@gmail.com")
                 ->setRoles(['ROLE_USER'])
                 ->setPlainPassword('!PGEL?66380');

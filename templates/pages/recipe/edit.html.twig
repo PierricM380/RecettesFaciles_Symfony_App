@@ -104,17 +104,17 @@
 				</div>
 			</div>
 
-			<div class="form-group mt-4">
+			<div class="form-group">
 				{{ form_row(form.ingredients) }}
 			</div>
 
-			<div class="form-group">
+			<div class="form-image">
 				{{ form_label(form.imageFile) }}
 				{{ form_widget(form.imageFile) }}
 			</div>
 
 			<div class="form-group pt-4">
-				<button type="submit" class='btn btn-success shadow me-4'>Créer</button>
+				<button type="submit" class='btn btn-success shadow me-4'>Modifier</button>
 				<a href="{{ path('recipe.index') }}" class="btn btn-danger shadow">
 					Annuler
 				</a>

@@ -76,35 +76,24 @@
 	</section>
 </header>
 <!-- MAIN -->
-<main class="main_recipes row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mx-1">
+<main class="main_recipes row row-cols-1 row-cols-lg-4 g-3">
 	{% for recipe in recipes %}
-	<article class="col">
-		<div class="card g-0 shadow">
-			<img src="{{ vich_uploader_asset(recipe, 'imageFile') }}" class="card-img-top">
-			<h2 class="card-header text-white bg-success">{{ recipe.name|title }}</h2>
-			<div class="card-body bg-light">
-				<div class="row d-flex flex-column align-items-center">
-					<section class="col-8 card border-success shadow mb-3 g-0">
-						<h3 class="card-header text-success">Ingrédients</h3>
-						<div class="card-body d-flex justify-content-center">
-							<ul>
-								{% for ingredient in recipe.ingredients %}
-								<li>{{ ingredient.name }}</li>
-								{% endfor %}
-							</ul>
-						</div>
-					</section>
-
-					<section class="col-11 card border-success shadow g-0 mb-3">
-						<h3 class="card-header text-success">Préparation</h3>
-						<div class="card-body">
-							<p class="card-text">{{ recipe.description }}</p>
-						</div>
-					</section>
-				</div>
+	<div class="col-11">
+		<div class="card shadow">
+			<img src="{{ vich_uploader_asset(recipe, 'imageFile') }}" class="card-img-top" alt="Imgae d'une recette">
+			<h2 class="card-header">{{ recipe.name|title }}</h2>
+			<div class="card-body">
+				<h3>Ingrédients</h3>
+				<ul>
+					{% for ingredient in recipe.ingredients %}
+					<li>{{ ingredient.name }}</li>
+					{% endfor %}
+				</ul>
+				<h3>Préparation</h3>
+				<p class="card-text">{{ recipe.description }}</p>
 			</div>
 		</div>
-	</article>
+	</div>
 	{% endfor %}
 </main>
 {% endblock %}

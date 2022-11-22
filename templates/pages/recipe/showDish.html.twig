@@ -79,9 +79,9 @@
 <main class="main_recipes row row-cols-1 row-cols-lg-4 g-3">
 	{% for recipe in recipes %}
 	<div class="col-11">
-		<div class="card shadow">
+		<div class="card shadow h-100">
 			<img src="{{ vich_uploader_asset(recipe, 'imageFile') }}" class="card-img-top" alt="Imgae d'une recette">
-			<h2 class="card-header">{{ recipe.name|title }}</h2>
+			<h2>{{ recipe.name|title }}</h2>
 			<div class="card-body">
 				<h3>Ingrédients</h3>
 				<ul>

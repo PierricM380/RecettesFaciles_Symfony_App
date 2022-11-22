@@ -5,69 +5,6 @@
 {% endblock %}
 
 {% block body %}
-<!-- NAVIGATION BAR -->
-<nav class="row navbar navbar-expand-lg navbar-dark bg-success shadow">
-	<div class="container-fluid">
-		<!-- Logo -->
-		<img class="nav_logo img-fluid" src="/images/LogoGigi.png" alt="Memoji de Gigi">
-		<!-- Navbar button at lg breakpoint -->
-		<button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<!-- Collapse area at lg breakpoint -->
-		<div class="collapse navbar-collapse mx-4" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="{{ path('home.index') }}">Accueil</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="{{ path('recipe.show.appetizer') }}">Apéritifs</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="{{ path('recipe.show.dish') }}">Plats</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="{{ path('recipe.show.dessert') }}">Desserts</a>
-				</li>
-
-				{% if app.user %}
-				<li class="nav-item">
-					<a class="nav-link active" href="{{ path('ingredient.index') }}">Mes ingrédients
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('recipe.index') }}">Mes recettes
-					</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						{{ app.user.fullName }}
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<li>
-							<a class="dropdown-item" href="{{ path('user.edit', {id : app.user.id}) }}">Modifier mes informations</a>
-						</li>
-						<li>
-							<a class="dropdown-item" href="{{ path('user.edit.password', {id : app.user.id}) }}">Modifier mon mot de passe</a>
-						</li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<li>
-							<a class="dropdown-item" href="{{ path('security.logout') }}">Déconnexion</a>
-						</li>
-					</ul>
-				</li>
-				{% else %}
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('security.login') }}">Connexion</a>
-				</li>
-				{% endif %}
-			</ul>
-		</div>
-	</div>
-</nav>
-
 <!-- HEADER -->
 <header class="row">
 	<section class="col-12">
@@ -76,7 +13,6 @@
 		</h1>
 	</section>
 </header>
-
 <!-- MAIN -->
 <main class="main_ingredients row">
 	{% if not ingredients.items is same as([]) %}

@@ -212,6 +212,10 @@ footer>div {
         padding-block: 75px;
     }
 
+    .main_home {
+        align-items: center;
+    }
+
     /* HOME PAGE */
     .main_home h2 {
         text-align: initial;

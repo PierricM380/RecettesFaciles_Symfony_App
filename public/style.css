@@ -16,6 +16,11 @@ body {
     margin: 0;
 }
 
+.main_container {
+    position: relative;
+    top: 93px;
+}
+
 h1,
 h2,
 h3 {
@@ -39,7 +44,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /* NAVIGATION BAR */
@@ -175,8 +180,11 @@ footer>div {
 }
 
 @media screen and (min-width: 992px) {
-
     /* GLOBAL */
+    .main_container {
+        top: 115px;
+    }
+    
     h1 {
         font-size: 2.5rem;
         margin-bottom: 25px;
@@ -187,7 +195,7 @@ footer>div {
     }
 
     h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     /* NAVIGATION BAR */

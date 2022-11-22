@@ -16,6 +16,13 @@ body {
     margin: 0;
 }
 
+h1,
+h2,
+h3 {
+    font-family: noteworthy;
+    font-weight: bold;
+}
+
 h1 {
     font-size: 1.7rem;
     font-style: italic;
@@ -28,17 +35,11 @@ h2 {
     font-size: 1.3rem;
     color: #1b8252;
     text-align: center;
+    margin-block: 25px;
 }
 
 h3 {
     font-size: 1.2rem;
-}
-
-h1,
-h2,
-h3 {
-    font-family: noteworthy;
-    font-weight: bold;
 }
 
 /* NAVIGATION BAR */
@@ -74,10 +75,6 @@ header {
 }
 
 /* HOME */
-.main_home h2 {
-    margin-bottom: 25px;
-}
-
 .main_home p {
     text-align: justify;
 }
@@ -102,6 +99,7 @@ header {
 .main_home .menu_card {
     display: flex;
     justify-content: space-evenly;
+    padding-top: 10px;
 }
 
 .main_home .clickable:hover {
@@ -123,14 +121,6 @@ header {
 }
 
 /* RECIPES CATEGORIES PAGES */
-.main_recipes h2 {
-    color: #1b8252;
-}
-
-.card-header {
-    text-align: center;
-}
-
 .main_recipes .card-body .card-text {
     text-align: justify;
     margin: 15px;
@@ -212,13 +202,13 @@ footer>div {
         padding-block: 75px;
     }
 
+    /* HOME PAGE */
     .main_home {
         align-items: center;
     }
 
-    /* HOME PAGE */
-    .main_home h2 {
-        text-align: initial;
+    .main_home .introduction {
+        padding-right: 50px;
     }
 
     .main_home p {
@@ -226,7 +216,6 @@ footer>div {
     }
 
     /* INGREDIENTS PAGE */
-
     .main_recipes .form-image img {
         width: 300px;
     }

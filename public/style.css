@@ -74,6 +74,11 @@ header {
     padding-block: 50px;
 }
 
+.main_ingredients_new .form,
+.main_recipes_new .form {
+    padding: 25px;
+}
+
 /* HOME */
 .main_home p {
     text-align: justify;
@@ -98,7 +103,7 @@ header {
 
 .main_home .menu_card {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding-top: 10px;
 }
 
@@ -147,10 +152,13 @@ header {
     color: #f5f5f5;
 }
 
-.main_recipes .form-image img {
-    width: 200px;
-    padding-top: 10px;
-    padding-right: 10px;
+.main_recipes_new .form-image img {
+    width: 100%;
+    height: auto;
+    border: 10px solid #1b8252;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #000000;
+    margin-block: 15px;
 }
 
 /* FOOTER */

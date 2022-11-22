@@ -6,7 +6,7 @@
 
 {% block body %}
 <!-- NAVIGATION BAR -->
-<nav class="row navbar navbar-expand-lg fixed-top navbar-dark bg-success shadow">
+<nav class="row navbar navbar-expand-lg navbar-dark bg-success shadow">
 	<div class="container-fluid">
 		<!-- Logo -->
 		<img class="nav_logo img-fluid" src="/images/LogoGigi.png" alt="Memoji de Gigi">
@@ -75,25 +75,27 @@
 		</h1>
 	</section>
 </header>
-<main class="main_ingredients row">
+<main class="main_ingredients_new row">
 	<div class="col-11 col-lg-7">
 		<div class="form card shadow">
-			{{ form_start(form) }}
-			<div class="form-group">
-				{{ form_label(form.name) }}
-				{{ form_widget(form.name) }}
-				<div class="form-error">
-					{{ form_errors(form.name) }}
+			<div class="card-body">
+				{{ form_start(form) }}
+				<div class="form-group">
+					{{ form_label(form.name) }}
+					{{ form_widget(form.name) }}
+					<div class="form-error">
+						{{ form_errors(form.name) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="form-group pt-4">
-				<button type="submit" class='btn btn-success shadow me-4'>Créer</button>
-				<a href="{{ path('ingredient.index') }}" class="btn btn-danger shadow">
-					Annuler
-				</a>
+				<div class="form-group pt-4">
+					<button type="submit" class='btn btn-success shadow me-4'>Créer</button>
+					<a href="{{ path('ingredient.index') }}" class="btn btn-danger shadow">
+						Annuler
+					</a>
+				</div>
+				{{ form_end(form) }}
 			</div>
-			{{ form_end(form) }}
 		</div>
 	</div>
 </main>

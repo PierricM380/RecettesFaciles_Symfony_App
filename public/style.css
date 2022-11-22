@@ -11,22 +11,23 @@ body {
         Roboto, Oxygen, Ubuntu, Cantarell,
         'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #f5f5f5;
-    min-height: 100vh;
     overflow-x: hidden;
     padding: 0;
     margin: 0;
 }
 
 h1 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     font-style: italic;
     text-align: center;
     color: #6f42c1;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    color: #1b8252;
+    text-align: center;
 }
 
 h3 {
@@ -49,9 +50,7 @@ h3 {
 
 /* HEADER */
 header {
-    position: relative;
-    top: 91px;
-    height: 225px;
+    height: 200px;
     display: flex;
     align-items: center;
     background-image: url('/images/rosemary.jpg');
@@ -61,37 +60,21 @@ header {
 }
 
 /* MAINS */
+.main_login,
 .main_home,
+.main_ingredients,
+.main_ingredients_new,
 .main_recipes,
 .main_recipes_new,
-.main_login,
-.main_ingredients,
 .main_informations {
-    position: relative;
-    top: 121px;
     display: flex;
     justify-content: center;
-    padding-top: 25px;
-}
-
-.main_login,
-.main_ingredients,
-.main_recipes,
-.main_informations {
-    height: 90vh;
-}
-
-.main_login .form,
-.main_ingredients .form,
-.main_recipes_new .form,
-.main_informations .form {
-    padding: 25px;
+    min-height: 100vh;
+    padding-block: 50px;
 }
 
 /* HOME */
 .main_home h2 {
-    color: #1b8252;
-    text-align: center;
     margin-bottom: 25px;
 }
 
@@ -119,7 +102,6 @@ header {
 .main_home .menu_card {
     display: flex;
     justify-content: space-evenly;
-    padding-bottom: 25px;
 }
 
 .main_home .clickable:hover {
@@ -141,12 +123,17 @@ header {
 }
 
 /* RECIPES CATEGORIES PAGES */
-.main_recipes .card-body button {
+.main_recipes h2 {
     color: #1b8252;
 }
 
-.main_recipes h2 {
-    color: #6f42c1;
+.card-header {
+    text-align: center;
+}
+
+.main_recipes .card-body .card-text {
+    text-align: justify;
+    margin: 15px;
 }
 
 /* INGREDIENTS PAGES */
@@ -159,7 +146,7 @@ header {
     background-color: #8c208c;
 }
 
-/* RECIPES USER PAGES */
+/* RECIPES LIST PAGES */
 .main_recipes td:nth-child(4)>a {
     background-color: #b126b1;
     color: #f5f5f5;
@@ -176,22 +163,9 @@ header {
     padding-right: 10px;
 }
 
-/*  */
-.card-header {
-    text-align: center;
-}
-
-.main_prentation_card {
-    padding: 50px;
-    text-align: justify;
-}
-
 /* FOOTER */
 footer {
-    position: relative;
-    top: 157px;
     height: 50px;
-    background-color: #6f42c1;
 }
 
 footer>div {
@@ -209,7 +183,11 @@ footer>div {
     }
 
     h2 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
     }
 
     /* NAVIGATION BAR */
@@ -220,35 +198,18 @@ footer>div {
 
     /* HEADER */
     header {
-        position: relative;
-        top: 115px;
-        height: 375px;
+        height: 400px;
     }
 
     /* MAIN */
+    .main_login,
     .main_home,
+    .main_ingredients,
+    .main_ingredients_new,
     .main_recipes,
     .main_recipes_new,
-    .main_login,
-    .main_informations,
-    .main_ingredients,
     .main_informations {
-        position: relative;
-        top: 150px;
-        padding-top: 50px;
-    }
-
-    .main_login,
-    .main_ingredients,
-    .main_recipes,
-    .main_informations {
-        height: 100vh;
-    }
-
-    .main_login .form,
-    .main_ingredients .form,
-    .main_recipes_new .form {
-        padding: 50px;
+        padding-block: 75px;
     }
 
     /* HOME PAGE */
@@ -260,16 +221,7 @@ footer>div {
         text-align: initial;
     }
 
-    .main_home .menu_card {
-        padding-bottom: 50px;
-    }
-
     /* INGREDIENTS PAGE */
-
-    /* LOGIN PAGE*/
-    .main_login {
-        height: 50vh;
-    }
 
     .main_recipes .form-image img {
         width: 300px;
@@ -277,8 +229,6 @@ footer>div {
 
     /* FOOTER */
     footer {
-        position: relative;
-        top: 185px;
         height: 75px;
     }
 }

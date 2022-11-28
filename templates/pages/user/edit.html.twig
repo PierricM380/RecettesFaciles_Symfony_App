@@ -6,7 +6,7 @@
 
 {% block body %}
 <!-- HEADER -->
-<header class="row">
+<header class="row shadow">
 	<section class="col-12">
 		<h1><strong>Modifier mes informations</strong></h1>
 	</section>
@@ -48,8 +48,8 @@
 				</div>
 
 				<div class="form-group pt-4">
-					<button type="submit" class='btn btn-success shadow me-4'>Modifier</button>
-					<a href="{{ path('home.index') }}" class="btn btn-danger shadow">
+					<button type="submit" class='validate shadow me-4'>Valider</button>
+					<a href="{{ path('home.index') }}" class="button delete shadow">
 						Annuler
 					</a>
 				</div>

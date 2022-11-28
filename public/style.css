@@ -10,7 +10,7 @@ body {
         'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell,
         'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #F5EEDC;
     overflow-x: hidden;
     padding: 0;
     margin: 0;
@@ -32,13 +32,13 @@ h1 {
     font-size: 1.7rem;
     font-style: italic;
     text-align: center;
-    color: #6f42c1;
+    color: #ECB390;
     margin-bottom: 15px;
 }
 
 h2 {
     font-size: 1.3rem;
-    color: #1b8252;
+    color: #ECB390;
     text-align: center;
     margin-block: 25px;
 }
@@ -47,20 +47,76 @@ h3 {
     font-size: 1.1rem;
 }
 
-/* NAVIGATION BAR */
-nav ul li .nav-link {
-    color: #f5f5f5;
+tr {
+    height: 60px;
 }
 
-nav ul li .nav-link:hover {
+.button {
     color: #f5f5f5;
-    text-decoration: underline;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+button {
+    color: #f5f5f5;
+    padding: 8px;
+    border: hidden;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+.validate {
+    background: #82B48C;
+}
+
+.validate:hover {
+    color: #f5f5f5;
+    background: #607e60;
+}
+
+.update {
+    background: #ECB390;
+}
+
+.update:hover {
+    color: #f5f5f5;
+    background: #e7a175;
+}
+
+.delete {
+    background: #DD4A48;
+}
+
+.delete:hover {
+    color: #f5f5f5;
+    background: #C31207;
+}
+
+/* NAVIGATION BAR */
+nav {
+    background: #F5EEDC;
 }
 
 .nav_logo {
     width: 75px;
     height: auto;
     margin-inline: 20px;
+}
+
+nav li .dropdown-menu {
+    background: #F5EEDC;
+}
+
+nav ul li .nav-link,
+nav ul li .dropdown-item {
+    color: #DD4A48;
+}
+
+nav ul li .nav-link:hover {
+    color: #ECB390;
+    text-decoration: underline;
 }
 
 /* HEADER */
@@ -71,7 +127,11 @@ header {
     background-image: url('/images/rosemary.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    box-shadow: 0 5px 5px rgb(206, 206, 214);
+}
+
+.main_ingredients_new .card,
+.main_recipes_new .card {
+    border: 5px solid #82B48C;
 }
 
 /* MAINS */
@@ -95,6 +155,11 @@ header {
     padding: 25px;
 }
 
+/* LOGIN */
+.main_login .form {
+    border: 5px solid #82B48C;
+}
+
 /* HOME */
 .main_home p {
     text-align: justify;
@@ -107,6 +172,7 @@ header {
 .main_home a {
     text-decoration: none;
     font-weight: 300;
+    color: #DD4A48;
 }
 
 .main_home a:hover {
@@ -131,47 +197,43 @@ header {
 
 .main_home .clickable_img {
     border-radius: 15px;
-    box-shadow: 0px 0px 10px #000000;
 }
 
 .main_home .img-title {
     position: absolute;
     margin-top: 5px;
     margin-left: 10px;
-    color: #ffffff;
+    color: #F5EEDC;
 }
 
 /* RECIPES CATEGORIES PAGES */
+.main_recipes .card {
+    border: 5px solid #82B48C;
+}
+
+.main_recipes .card-body {
+    padding: 50px;
+}
+
 .main_recipes .card-body .card-text {
     text-align: justify;
     margin: 15px;
 }
 
-/* INGREDIENTS PAGES */
-.main_ingredients td:nth-child(3)>a {
-    background-color: #b126b1;
-    color: #f5f5f5;
+.main_recipes h2 {
+    color: #ECB390;
 }
 
-.main_ingredients td:nth-child(3)>a:hover {
-    background-color: #8c208c;
+.main_recipes h2,
+.main_recipes h3 {
+    text-decoration: underline;
 }
 
 /* RECIPES LIST PAGES */
-.main_recipes td:nth-child(4)>a {
-    background-color: #b126b1;
-    color: #f5f5f5;
-}
-
-.main_recipes td:nth-child(4)>a:hover {
-    background-color: rgb(140, 32, 140);
-    color: #f5f5f5;
-}
-
 .main_recipes_new .form-image img {
     width: 100%;
     height: auto;
-    border: 10px solid #1b8252;
+    border: 10px solid #F5EEDC;
     border-radius: 15px;
     box-shadow: 0 0 5px #000000;
     margin-block: 15px;
@@ -180,6 +242,7 @@ header {
 /* FOOTER */
 footer {
     height: 75px;
+    background-color: #ECB390;
 }
 
 footer div {
@@ -189,8 +252,8 @@ footer div {
 }
 
 footer div .far,
-footer div span{
-    color: #f5f5f5;
+footer div span {
+    color: #F5EEDC;
 }
 
 @media screen and (min-width: 992px) {

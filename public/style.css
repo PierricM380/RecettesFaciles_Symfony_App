@@ -115,10 +115,18 @@ nav {
     background: var(--orange-light);
 }
 
-.nav_logo {
-    width: 75px;
-    height: auto;
-    margin-inline: 20px;
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav ul .navbar-brand {
+    font-family: noteworthy;
+    color: var(--green-light);
+}
+
+nav ul .navbar-brand:hover {
+    color: var(--green-dark);
 }
 
 nav li .dropdown-menu {
@@ -135,6 +143,10 @@ nav ul li .nav-link:hover {
     text-decoration: underline;
 }
 
+nav .navbar-toggler {
+    color: var(--orange-darkness);
+}
+
 /* HEADER */
 header {
     height: 200px;
@@ -143,12 +155,6 @@ header {
     background-image: url('/images/rosemary.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-}
-
-.main_ingredients_new .card,
-.main_recipes_new .card {
-    border: 5px solid var(--green-light);
-    background: var(--orange-light);
 }
 
 /* MAINS */
@@ -165,16 +171,19 @@ header {
     padding-block: 50px;
 }
 
+.main_login .card,
+.main_ingredients_new .card,
+.main_recipes_new .card,
+.main_informations .card {
+    border: 5px solid var(--green-light);
+    background: var(--orange-light);
+}
+
 .main_login .form,
 .main_informations .form,
 .main_ingredients_new .form,
 .main_recipes_new .form {
     padding: 25px;
-}
-
-/* LOGIN */
-.main_login .form {
-    border: 5px solid var(--green-light);
 }
 
 /* HOME */
@@ -189,7 +198,7 @@ header {
 .main_home a {
     text-decoration: none;
     font-weight: 300;
-    color: var(--red-light);
+    color: var(--green-light);
 }
 
 .main_home a:hover {

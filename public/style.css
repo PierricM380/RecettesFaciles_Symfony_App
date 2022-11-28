@@ -1,4 +1,15 @@
 /* GLOBAL */
+:root {
+    --orange-light: #F5EEDC;
+    --orange-dark: #ECB390;
+    --orange-darkness: #e7a175;
+    --whiteSmoke: #f5f5f5;
+    --green-light: #82B48C;
+    --green-dark: #607e60;
+    --red-light: #DD4A48;
+    --red-dark: #C31207;
+}
+
 *,
 ::before,
 ::after {
@@ -10,7 +21,7 @@ body {
         'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell,
         'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #F5EEDC;
+    background-color: var(--orange-light);
     overflow-x: hidden;
     padding: 0;
     margin: 0;
@@ -32,13 +43,13 @@ h1 {
     font-size: 1.7rem;
     font-style: italic;
     text-align: center;
-    color: #ECB390;
+    color: var(--orange-darkness);
     margin-bottom: 15px;
 }
 
 h2 {
     font-size: 1.3rem;
-    color: #ECB390;
+    color: var(--orange-darkness);
     text-align: center;
     margin-block: 25px;
 }
@@ -52,7 +63,7 @@ tr {
 }
 
 .button {
-    color: #f5f5f5;
+    color: var(--whiteSmoke);
     padding: 10px;
     text-decoration: none;
     border-radius: 7px;
@@ -60,7 +71,7 @@ tr {
 }
 
 button {
-    color: #f5f5f5;
+    color: var(--whiteSmoke);
     padding: 8px;
     border: hidden;
     border-radius: 7px;
@@ -68,40 +79,40 @@ button {
 }
 
 .validate {
-    background: #82B48C;
+    background: var(--green-light);
 }
 
 .validate:hover {
-    color: #f5f5f5;
-    background: #607e60;
+    color: var(--whiteSmoke);
+    background: var(--green-dark);
 }
 
 .update {
-    background: #ECB390;
+    background: var(--orange-dark);
 }
 
 .update:hover {
-    color: #f5f5f5;
-    background: #e7a175;
+    color: var(--whiteSmoke);
+    background: var(--orange-darkness);
 }
 
 .delete {
-    background: #DD4A48;
+    background: var(--red-light);
 }
 
 .delete:hover {
-    color: #f5f5f5;
-    background: #C31207;
+    color: var(--whiteSmoke);
+    background: var(--red-dark);
 }
 
 .main_ingredients table,
 .main_recipes table {
-    border: 5px solid #82B48C;
+    border: 5px solid var(--green-light);
 }
 
 /* NAVIGATION BAR */
 nav {
-    background: #F5EEDC;
+    background: var(--orange-light);
 }
 
 .nav_logo {
@@ -111,16 +122,16 @@ nav {
 }
 
 nav li .dropdown-menu {
-    background: #F5EEDC;
+    background: var(--orange-light);
 }
 
 nav ul li .nav-link,
 nav ul li .dropdown-item {
-    color: #DD4A48;
+    color: var(--orange-darkness);
 }
 
 nav ul li .nav-link:hover {
-    color: #ECB390;
+    color: var(--orange-dark);
     text-decoration: underline;
 }
 
@@ -136,7 +147,8 @@ header {
 
 .main_ingredients_new .card,
 .main_recipes_new .card {
-    border: 5px solid #82B48C;
+    border: 5px solid var(--green-light);
+    background: var(--orange-light);
 }
 
 /* MAINS */
@@ -162,7 +174,7 @@ header {
 
 /* LOGIN */
 .main_login .form {
-    border: 5px solid #82B48C;
+    border: 5px solid var(--green-light);
 }
 
 /* HOME */
@@ -177,7 +189,7 @@ header {
 .main_home a {
     text-decoration: none;
     font-weight: 300;
-    color: #DD4A48;
+    color: var(--red-light);
 }
 
 .main_home a:hover {
@@ -208,12 +220,13 @@ header {
     position: absolute;
     margin-top: 5px;
     margin-left: 10px;
-    color: #F5EEDC;
+    color: var(--whiteSmoke);
 }
 
 /* RECIPES CATEGORIES PAGES */
 .main_recipes .card {
-    border: 5px solid #82B48C;
+    border: 5px solid var(--green-light);
+    background: var(--orange-light);
 }
 
 .main_recipes .card-body {
@@ -225,10 +238,6 @@ header {
     margin: 15px;
 }
 
-.main_recipes h2 {
-    color: #ECB390;
-}
-
 .main_recipes h2,
 .main_recipes h3 {
     text-decoration: underline;
@@ -238,16 +247,15 @@ header {
 .main_recipes_new .form-image img {
     width: 100%;
     height: auto;
-    border: 10px solid #F5EEDC;
+    border: 10px solid var(--green-light);
     border-radius: 15px;
-    box-shadow: 0 0 5px #000000;
     margin-block: 15px;
 }
 
 /* FOOTER */
 footer {
     height: 75px;
-    background-color: #ECB390;
+    background-color: var(--orange-dark);
 }
 
 footer div {
@@ -258,7 +266,7 @@ footer div {
 
 footer div .far,
 footer div span {
-    color: #F5EEDC;
+    color: var(--whiteSmoke);
 }
 
 @media screen and (min-width: 992px) {

@@ -94,6 +94,11 @@ button {
     background: #C31207;
 }
 
+.main_ingredients table,
+.main_recipes table {
+    border: 5px solid #82B48C;
+}
+
 /* NAVIGATION BAR */
 nav {
     background: #F5EEDC;

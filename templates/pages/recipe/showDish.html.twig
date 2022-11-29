@@ -6,15 +6,13 @@
 
 {% block body %}
 <!-- HEADER -->
-<header class="row shadow">
+<header class="row">
 	<section class="col-12">
-		<h1>
-			<strong>Les Plats</strong>
-		</h1>
+		<h1><strong>Plats</strong></h1>
 	</section>
 </header>
 <!-- MAIN -->
-<main class="main_recipes row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<section class="recipes row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 	{% for recipe in recipes %}
 	<div class="col-11">
 		<div class="card shadow">
@@ -33,5 +31,5 @@
 		</div>
 	</div>
 	{% endfor %}
-</main>
+</section>
 {% endblock %}

@@ -6,7 +6,7 @@
 
 {% block body %}
 <!-- HEADER -->
-<header class="row shadow">
+<header class="row">
 	<section class="col-12">
 		<h1>
 			<strong>Connexion</strong>
@@ -14,7 +14,7 @@
 	</section>
 </header>
 <!-- MAIN -->
-<main class="main_login row">
+<section class="login row">
 	<div class="col-11 col-lg-4">
 		{% if error %}
 		<div class="alert alert-danger mt-4">
@@ -22,7 +22,7 @@
 		</div>
 		{% endif %}
 
-		<form class="form card shadow" action="{{ path('security.login') }}" method="post" name="login">
+		<form class="card shadow" action="{{ path('security.login') }}" method="post" name="login">
 			<div class="card-body">
 				<div class="form-group">
 					<label for="username" class="form-label mt-4">Adresse email</label>
@@ -42,5 +42,5 @@
 			</div>
 		</form>
 	</div>
-</main>
+</section>
 {% endblock %}

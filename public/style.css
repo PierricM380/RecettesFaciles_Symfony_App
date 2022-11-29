@@ -157,7 +157,6 @@ header section {
 }
 
 /* MAINS */
-.main_login .card,
 .main_ingredients_new .card,
 .main_recipes_new .card,
 .main_informations .card {
@@ -165,7 +164,6 @@ header section {
     background: var(--orange-light);
 }
 
-.main_login .form,
 .main_informations .form,
 .main_ingredients_new .form,
 .main_recipes_new .form {
@@ -175,6 +173,21 @@ header section {
 .main_ingredients table,
 .main_recipes table {
     border: 5px solid var(--green-light);
+}
+
+/* LOGIN & USER INFORMATIONS */
+.login,
+.informations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+}
+.login .card,
+.informations .card {
+    border: 5px solid var(--green-light);
+    background: var(--orange-light);
+    padding: 10px;
 }
 
 /* HOME */

@@ -156,25 +156,6 @@ header section {
     align-items: center;
 }
 
-/* MAINS */
-.main_ingredients_new .card,
-.main_recipes_new .card,
-.main_informations .card {
-    border: 5px solid var(--green-light);
-    background: var(--orange-light);
-}
-
-.main_informations .form,
-.main_ingredients_new .form,
-.main_recipes_new .form {
-    padding: 25px;
-}
-
-.main_ingredients table,
-.main_recipes table {
-    border: 5px solid var(--green-light);
-}
-
 /* LOGIN & USER INFORMATIONS */
 .login,
 .informations {
@@ -187,7 +168,7 @@ header section {
 .informations .card {
     border: 5px solid var(--green-light);
     background: var(--orange-light);
-    padding: 10px;
+    padding-inline: 10px;
 }
 
 /* HOME */
@@ -301,6 +282,24 @@ header section {
 
 .recipes .card-body .card-text {
     text-align: justify;
+}
+
+/* INGREDIENTS LIST & CRUD */
+.ingredients,
+.ingredients_new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+}
+.ingredients table {
+    border: 3px solid var(--green-light);
+}
+
+.ingredients_new .card {
+    border: 5px solid var(--green-light);
+    background: var(--orange-light);
+    padding-inline: 10px;
 }
 
 /* RECIPES LIST PAGES */

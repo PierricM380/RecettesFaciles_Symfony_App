@@ -14,7 +14,7 @@
 	</section>
 </header>
 <!-- MAIN -->
-<main class="main_ingredients row">
+<section class="ingredients row">
 	{% if not ingredients.items is same as([]) %}
 	<!-- If ingredients list is not empty -->
 	<div class="col-11 col-lg-9">
@@ -89,5 +89,5 @@
 		{% endfor %}
 	</div>
 	{% endif %}
-</main>
+</section>
 {% endblock %}

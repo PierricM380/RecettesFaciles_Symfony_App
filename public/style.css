@@ -145,10 +145,8 @@ header {
 }
 
 header h1 {
-    position: relative;
-    top: 60%;
-    left: 9%;
-    color: var(--whiteSmoke);
+    text-align: center;
+    padding-top: 25px;
 }
 
 header .wrapper_video {
@@ -326,18 +324,13 @@ footer div span {
         height: 700px;
     }
 
-    header h1 {
-        top: 50%;
-        left: 35%;
-    }
-
     header .wrapper_video {
         height: 700px;
     }
 
     /* HOME */
     .home {
-        padding-top: 100px;
+        padding-top: 150px;
     }
 
     /* Introduction */

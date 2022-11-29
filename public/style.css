@@ -25,11 +25,13 @@ body {
         'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: var(--orange-light);
     overflow-x: hidden;
+    padding: 0;
+    margin: 0;
 }
 
 .main_container {
     position: relative;
-    top: 35px;
+    top: 78px;
     min-height: 100vh;
 }
 
@@ -43,7 +45,7 @@ h3 {
 h1 {
     font-size: 1.7rem;
     font-style: italic;
-    color: var(--orange-darkness);
+    color: var(--whiteSmoke);
 }
 
 h2 {
@@ -142,18 +144,16 @@ nav .navbar-toggler {
 /* HEADER */
 header {
     height: 275px;
+    background-image: url("/images/table.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
 }
 
-header h1 {
-    text-align: center;
-    padding-top: 25px;
-}
-
-header .wrapper_video {
+header section {
     display: flex;
     justify-content: center;
-    object-fit: cover;
-    height: 275px;
+    align-items: center;
 }
 
 /* MAINS */
@@ -179,7 +179,7 @@ header .wrapper_video {
 
 /* HOME */
 .home {
-    padding-top: 100px;
+    padding-top: 25px;
 }
 
 /* Introduction */
@@ -304,7 +304,7 @@ footer div span {
 
     /* GLOBAL */
     .main_container {
-        top: 32px;
+        top: 89px;
     }
 
     h1 {
@@ -321,16 +321,12 @@ footer div span {
 
     /* HEADER */
     header {
-        height: 700px;
-    }
-
-    header .wrapper_video {
-        height: 700px;
+        height: 500px
     }
 
     /* HOME */
     .home {
-        padding-top: 150px;
+        padding-top: 50px;
     }
 
     /* Introduction */

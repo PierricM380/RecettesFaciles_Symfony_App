@@ -6,17 +6,20 @@
 
 {% block body %}
 <!-- HEADER-->
-<header class="row shadow">
-	<section class="col-12">
-		<h1>
-			<strong>Les Recettes Faciles de Gigi</strong>
-		</h1>
-	</section>
+<header class="row">
+	<h1><strong>De la cuisine simple et rapide</strong></h1>
+	<video muted autoplay playsinline loop class="wrapper_video col-12">
+		<source src="/videos/cook.mp4" type="video/mp4">
+		<source src="/videos/cook.mov" type="video/mov">
+		<source src="/videos/cook.WebM" type="video/WebM">
+		<source src="/videos/cook.ogv" type="video/ogv">
+		La vidéo ne peut être lu avec votre navigateur.
+	</video>
 </header>
 <!-- MAIN -->
-<main class="main_home row g-3">
+<section class="home row">
 	<!-- Introduction -->
-	<section class="introduction col-11 col-lg-6">
+	<div class="introduction col-11 col-lg-6">
 		<h2><strong>Bienvenue chez Gigi</strong></h2>
 		<p>
 			Ce site est dédié à toutes les personnes aimant la
@@ -45,23 +48,22 @@
 				<strong>desserts</strong>
 			</a>.
 		</p>
-	</section>
-	<!-- Animation video -->
-	<div class="col-11 col-lg-3">
-		<video class="card-img-top shadow" muted autoplay playsinline loop>
-			<source src="/videos/cook.mp4" type="video/mp4">
-			<source src="/videos/cook.mov" type="video/mov">
-			<source src="/videos/cook.WebM" type="video/WebM">
-			<source src="/videos/cook.ogv" type="video/ogv">
-			La vidéo ne peut être lu avec votre navigateur.
-		</video>
+
 	</div>
-	<!-- Menu -->
-	<section class="menu col-7 col-lg-9">
+	<!-- Logo -->
+	<div class="logo_wrapper col-11 col-lg-2">
+		<img class="logo" src="/images/LogoGigi.png" alt="Mémoji logo. Une jeune fille à lunette avec un toque et une spatule à la main">
+	</div>
+</section>
+<!-- MENU -->
+<section class="menu row">
+	<div class="col-12">
 		<h2><strong>Le Menu</strong></h2>
-		<div class="menu_card row g-4">
+	</div>
+	<div class="menu_card col-9 col-lg-10">
+		<div class="card_wrapper row g-4">
 			<!-- appetizer card -->
-			<div class="col-11 col-lg-3">
+			<div class="col-9 col-lg-3">
 				<div class="clickable">
 					<a href="{{ path('recipe.show.appetizer') }}">
 						<h3 class="img-title">
@@ -72,7 +74,7 @@
 				</div>
 			</div>
 			<!-- dish card -->
-			<div class="col-11 col-lg-3">
+			<div class="col-9 col-lg-3">
 				<div class="clickable">
 					<a href="{{ path('recipe.show.dish') }}">
 						<h3 class="img-title">
@@ -83,7 +85,7 @@
 				</div>
 			</div>
 			<!-- dessert card -->
-			<div class="col-11 col-lg-3">
+			<div class="col-9 col-lg-3">
 				<div class="clickable">
 					<a href="{{ path('recipe.show.dessert') }}">
 						<h3 class="img-title">
@@ -93,8 +95,7 @@
 					</a>
 				</div>
 			</div>
-
 		</div>
-	</section>
-</main>
+	</div>
+</section>
 {% endblock %}

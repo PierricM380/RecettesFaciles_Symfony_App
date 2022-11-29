@@ -14,6 +14,8 @@
 ::before,
 ::after {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -23,13 +25,12 @@ body {
         'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: var(--orange-light);
     overflow-x: hidden;
-    padding: 0;
-    margin: 0;
 }
 
 .main_container {
     position: relative;
-    top: 93px;
+    top: 35px;
+    min-height: 100vh;
 }
 
 h1,
@@ -42,16 +43,12 @@ h3 {
 h1 {
     font-size: 1.7rem;
     font-style: italic;
-    text-align: center;
     color: var(--orange-darkness);
-    margin-bottom: 15px;
 }
 
 h2 {
     font-size: 1.3rem;
     color: var(--orange-darkness);
-    text-align: center;
-    margin-block: 25px;
 }
 
 h3 {
@@ -105,11 +102,6 @@ button {
     background: var(--red-dark);
 }
 
-.main_ingredients table,
-.main_recipes table {
-    border: 5px solid var(--green-light);
-}
-
 /* NAVIGATION BAR */
 nav {
     background: var(--orange-light);
@@ -149,28 +141,24 @@ nav .navbar-toggler {
 
 /* HEADER */
 header {
-    height: 200px;
+    height: 275px;
+}
+
+header h1 {
+    position: relative;
+    top: 60%;
+    left: 9%;
+    color: var(--whiteSmoke);
+}
+
+header .wrapper_video {
     display: flex;
-    align-items: center;
-    background-image: url('/images/rosemary.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    justify-content: center;
+    object-fit: cover;
+    height: 275px;
 }
 
 /* MAINS */
-.main_login,
-.main_home,
-.main_ingredients,
-.main_ingredients_new,
-.main_recipes,
-.main_recipes_new,
-.main_informations {
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    padding-block: 50px;
-}
-
 .main_login .card,
 .main_ingredients_new .card,
 .main_recipes_new .card,
@@ -186,46 +174,82 @@ header {
     padding: 25px;
 }
 
+.main_ingredients table,
+.main_recipes table {
+    border: 5px solid var(--green-light);
+}
+
 /* HOME */
-.main_home p {
+.home {
+    padding-top: 100px;
+}
+
+/* Introduction */
+.home {
+    display: flex;
+    justify-content: center;
+}
+
+.home h2 {
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.home p {
     text-align: justify;
 }
 
-.main_home em {
+.home em {
     font-style: normal;
 }
 
-.main_home a {
+.home a {
     text-decoration: none;
     font-weight: 300;
     color: var(--green-light);
 }
 
-.main_home a:hover {
+.home a:hover {
     text-decoration: underline;
 }
 
-.main_home .menu {
-    padding-top: 50px;
+/* Logo */
+.home .logo_wrapper {
+    display: none;
 }
 
-.main_home .menu_card {
+.home .logo_wrapper .logo {
+    width: 200px;
+    height: 200px;
+}
+
+/* Menu */
+.menu,
+.menu .card_wrapper {
     display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
+    justify-content: center;
 }
 
-.main_home .clickable:hover {
+.menu {
+    padding-block: 50px;
+}
+
+.menu h2 {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.menu .clickable:hover {
     cursor: pointer;
     opacity: 0.5;
     transition: all 0.3s ease;
 }
 
-.main_home .clickable_img {
+.menu .clickable_img {
     border-radius: 15px;
 }
 
-.main_home .img-title {
+.menu .img-title {
     position: absolute;
     margin-top: 5px;
     margin-left: 10px;
@@ -282,12 +306,11 @@ footer div span {
 
     /* GLOBAL */
     .main_container {
-        top: 115px;
+        top: 32px;
     }
 
     h1 {
         font-size: 2.5rem;
-        margin-bottom: 25px;
     }
 
     h2 {
@@ -298,39 +321,49 @@ footer div span {
         font-size: 1.3rem;
     }
 
-    /* NAVIGATION BAR */
-    .nav_logo {
-        width: 100px;
-        height: auto;
-    }
-
     /* HEADER */
     header {
-        height: 400px;
+        height: 700px;
     }
 
-    /* MAIN */
-    .main_login,
-    .main_home,
-    .main_ingredients,
-    .main_ingredients_new,
-    .main_recipes,
-    .main_recipes_new,
-    .main_informations {
-        padding-block: 75px;
+    header h1 {
+        top: 50%;
+        left: 35%;
     }
 
-    /* HOME PAGE */
-    .main_home {
+    header .wrapper_video {
+        height: 700px;
+    }
+
+    /* HOME */
+    .home {
+        padding-top: 100px;
+    }
+
+    /* Introduction */
+    .home .introduction {
+        padding: 45px;
+    }
+
+    .home h2 {
+        text-align: initial;
+    }
+
+    .home p {
+        text-align: initial;
+    }
+
+    /* Logo */
+    /* Logo */
+    .home .logo_wrapper {
+        display: flex;
+        justify-content: center;
         align-items: center;
     }
 
-    .main_home .introduction {
-        padding-right: 50px;
-    }
-
-    .main_home p {
-        text-align: initial;
+    .home .logo_wrapper .logo {
+        width: 250px;
+        height: 250px;
     }
 
     /* FOOTER */

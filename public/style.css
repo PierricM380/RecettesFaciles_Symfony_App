@@ -300,6 +300,16 @@ header section h1 {
     padding-block: 100px;
 }
 
+.ingredients .addSearch {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.ingredients .addSearch form {
+    display: flex;
+}
+
 .ingredients table,
 .recipe_list table {
     border: 3px solid var(--green-light);

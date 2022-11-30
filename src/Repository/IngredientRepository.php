@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Ingredient;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Data\SearchIngredient;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Ingredient>
@@ -37,5 +38,20 @@ class IngredientRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function searchIngredient(SearchIngredient $search): array
+    {
+        $query = $this
+            ->createQueryBuilder('i')
+            ->select('i');
+
+        if (!empty($search->q)) {
+            $query = $query
+                ->andWhere('i.name LIKE :q')
+                ->setParameter('q', "%{$search->q}%");
+        }
+
+        return $query->getQuery()->getResult();
     }
 }

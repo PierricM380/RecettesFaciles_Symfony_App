@@ -284,29 +284,35 @@ header section {
     text-align: justify;
 }
 
-/* INGREDIENTS LIST & CRUD */
+/* INGREDIENTS & RECIPES LIST WHITH CRUD */
 .ingredients,
-.ingredients_new {
+.ingredients_new,
+.recipe_list,
+.recipes_new {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 75vh;
+    padding-block: 100px;
 }
-.ingredients table {
+
+.ingredients table,
+.recipe_list table {
     border: 3px solid var(--green-light);
 }
 
-.ingredients_new .card {
+.ingredients_new .card,
+.recipes_new .card {
     border: 5px solid var(--green-light);
     background: var(--orange-light);
     padding-inline: 10px;
 }
 
-/* RECIPES LIST PAGES */
-.main_recipes_new .form-image img {
-    width: 100%;
+.recipes_new .form-image img {
+    width: 200px;
     height: auto;
-    border: 10px solid var(--green-light);
+    text-align: center;
+    border: 5px solid var(--green-light);
     border-radius: 15px;
     margin-block: 15px;
 }

@@ -6,15 +6,15 @@
 
 {% block body %}
 <!-- HEADER -->
-<header class="row shadow">
+<header class="row">
 	<section class="col-12">
 		<h1><strong>Créer une recette</strong></h1>
 	</section>
 </header>
 <!-- MAIN -->
-<main class="main_recipes_new row">
+<section class="recipes_new row">
 	<div class="col-11 col-lg-7">
-		<div class="form card shadow">
+		<div class="card shadow">
 			<div class="card-body">
 				{{ form_start(form) }}
 				<div class="form-group">
@@ -61,5 +61,5 @@
 		</div>
 
 	</div>
-</main>
+</section>
 {% endblock %}

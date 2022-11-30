@@ -6,7 +6,7 @@
 
 {% block body %}
 <!-- HEADER -->
-<header class="row shadow">
+<header class="row">
 	<section class="col-12">
 		<h1>
 			<strong>Mes Recettes</strong>
@@ -14,7 +14,7 @@
 	</section>
 </header>
 <!-- MAIN -->
-<main class="main_recipes row">
+<section class="recipe_list row">
 	{% if not recipes.items is same as([]) %}
 	<!-- If recipes list is not empty -->
 	<div class="col-11 col-lg-9">
@@ -87,5 +87,5 @@
 		{% endfor %}
 	</div>
 	{% endif %}
-</main>
+</section>
 {% endblock %}

@@ -143,11 +143,11 @@ nav .navbar-toggler {
 
 /* HEADER */
 header {
-    background-image: url("/images/table.jpg");
-    background-size: 100% 100%;
+    background-image: url("/images/header.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: top;
-    height: 275px;
+    background-position: center;
+    height: 225px;
 }
 
 header section {
@@ -355,7 +355,7 @@ footer div span {
 
     /* HEADER */
     header {
-        height: 500px
+        height: 600px
     }
 
     /* HOME */

@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Data\searchRecipe;
 use App\Entity\Recipe;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -37,5 +38,20 @@ class RecipeRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function searchRecipe(searchRecipe $search): array
+    {
+        $query = $this
+            ->createQueryBuilder('r')
+            ->select('r');
+
+        if (!empty($search->q)) {
+            $query = $query
+                ->andWhere('r.name LIKE :q')
+                ->setParameter('q', "%{$search->q}%");
+        }
+
+        return $query->getQuery()->getResult();
     }
 }

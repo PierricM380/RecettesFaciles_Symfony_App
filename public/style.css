@@ -300,13 +300,15 @@ header section h1 {
     padding-block: 100px;
 }
 
-.ingredients .addSearch {
+.ingredients .addSearch,
+.recipe_list .addSearch {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-.ingredients .addSearch form {
+.ingredients .addSearch form,
+.recipe_list .addSearch form {
     display: flex;
 }
 

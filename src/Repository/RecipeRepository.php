@@ -38,33 +38,4 @@ class RecipeRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
-    /**
-     * @return Recipe[] Returns an array of Recipe objects
-     */
-    public function findByCategory(?int $nbRecipes): array
-    {
-        $queryBuilder = $this->createQueryBuilder('r')
-            ->where('r.category = :salée')
-            ->orderBy('r.createdAt', 'DESC');
-
-
-        if ($nbRecipes !== 0 || $nbRecipes !== null) {
-            $queryBuilder->setMaxResults($nbRecipes);
-        }
-
-        return $queryBuilder
-            ->getQuery()
-            ->getResult();
-    }
-
-    //    public function findOneBySomeField($value): ?Recipe
-    //    {
-    //        return $this->createQueryBuilder('r')
-    //            ->andWhere('r.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
 }

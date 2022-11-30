@@ -246,41 +246,41 @@ header section {
 }
 
 /* RECIPES CATEGORIES PAGES */
-.recipes {
+.categories {
     display: flex;
     justify-content: center;
     padding-block: 50px;
 }
 
-.recipes .card {
+.categories .card {
     background: var(--orange-light);
     border-radius: 15px;
 }
 
-.recipes .card img {
+.categories .card img {
     border: 8px solid var(--green-light);
     border-radius: 15px 15px 0 0;
 }
 
-.recipes h2,
-.recipes h3 {
+.categories h2,
+.categories h3 {
     margin-top: 15px;
 }
 
-.recipes h2 {
+.categories h2 {
     text-align: center;
     text-decoration: underline;
 }
 
-.recipes h3 {
+.categories h3 {
     margin-bottom: 15px;
 }
 
-.recipes .card-body {
+.categories .card-body {
     padding-inline: 25px;
 }
 
-.recipes .card-body .card-text {
+.categories .card-body .card-text {
     text-align: justify;
 }
 
@@ -394,7 +394,7 @@ footer div span {
     }
 
     /* RECIPES CATEGORIES */
-    .recipes .card-body {
+    .categories .card-body {
         padding-inline: 50px;
     }
 

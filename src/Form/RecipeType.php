@@ -31,7 +31,7 @@ class RecipeType extends AbstractType
                 'required' => true,
                 'label' => 'Nom de la recette',
                 'label_attr' => [
-                    'class' => 'form-label mt-4'
+                    'class' => 'form-label'
                 ],
                 'constraints' => [
                     new Assert\Length(['min' => 2, 'max' => 50]),

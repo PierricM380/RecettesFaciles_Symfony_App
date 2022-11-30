@@ -290,9 +290,7 @@ header section h1 {
 
 /* INGREDIENTS & RECIPES LIST WHITH CRUD */
 .ingredients,
-.ingredients_new,
-.recipe_list,
-.recipes_new {
+.recipes {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -301,30 +299,30 @@ header section h1 {
 }
 
 .ingredients .addSearch,
-.recipe_list .addSearch {
+.recipes .addSearch {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
 .ingredients .addSearch form,
-.recipe_list .addSearch form {
+.recipes .addSearch form {
     display: flex;
 }
 
 .ingredients table,
-.recipe_list table {
+.recipes table {
     border: 3px solid var(--green-light);
 }
 
-.ingredients_new .card,
-.recipes_new .card {
+.ingredients .card,
+.recipes .card {
     border: 5px solid var(--green-light);
     background: var(--orange-light);
     padding-inline: 10px;
 }
 
-.recipes_new .form-image img {
+.recipes .form-image img {
     width: 200px;
     height: auto;
     text-align: center;

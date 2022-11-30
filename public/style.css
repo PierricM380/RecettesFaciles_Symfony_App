@@ -165,7 +165,8 @@ header section h1 {
 .informations {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-block: 100px;
     min-height: 75vh;
 }
 .login .card,

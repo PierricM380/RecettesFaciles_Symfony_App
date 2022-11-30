@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Data\searchRecipe;
+use App\Data\SearchRecipe;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -25,7 +25,7 @@ class SearchRecipeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => searchRecipe::class,
+            'data_class' => SearchRecipe::class,
             'method' => 'GET',
             'csrf_protection' => false
         ]);

@@ -4,7 +4,7 @@ namespace App\Data;
 
 use App\Entity\Ingredient;
 
-class searchIngredient
+class SearchIngredient
 {
     /**
      * @var string

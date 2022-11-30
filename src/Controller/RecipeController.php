@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Recipe;
 use App\Form\RecipeType;
-use App\Data\searchRecipe;
+use App\Data\SearchRecipe;
 use App\Form\SearchRecipeType;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -22,7 +22,7 @@ class RecipeController extends AbstractController
     #[Route('/recette', name: 'recipe.index', methods: ['GET'])]
     public function index(RecipeRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
-        $data = new searchRecipe();
+        $data = new SearchRecipe();
         $form = $this->createForm(SearchRecipeType::class, $data);
         $form->handleRequest($request);
 

@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Ingredient;
 use App\Form\IngredientType;
-use App\Data\searchIngredient;
+use App\Data\SearchIngredient;
 use App\Form\SearchIngredientType;
 use App\Repository\IngredientRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -22,7 +22,7 @@ class IngredientController extends AbstractController
     #[Route('/ingredient', name: 'ingredient.index', methods: ['GET'])]
     public function index(IngredientRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
-        $data = new searchIngredient();
+        $data = new SearchIngredient();
         $form = $this->createForm(SearchIngredientType::class, $data);
         $form->handleRequest($request);
 

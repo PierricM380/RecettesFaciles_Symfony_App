@@ -4,14 +4,16 @@ namespace App\Controller;
 
 use App\Entity\Ingredient;
 use App\Form\IngredientType;
+use App\Data\searchIngredient;
+use App\Form\SearchIngredientType;
 use App\Repository\IngredientRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class IngredientController extends AbstractController
@@ -20,14 +22,19 @@ class IngredientController extends AbstractController
     #[Route('/ingredient', name: 'ingredient.index', methods: ['GET'])]
     public function index(IngredientRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
+        $data = new searchIngredient();
+        $form = $this->createForm(SearchIngredientType::class, $data);
+        $form->handleRequest($request);
+
         $ingredients = $paginator->paginate(
-            $repository->findAll(),
+            $repository->searchIngredient($data),
             $request->query->getInt('page', 1),
             5
         );
 
         return $this->render('pages/ingredient/index.html.twig', [
-            'ingredients' => $ingredients
+            'ingredients' => $ingredients,
+            'searchIngredient' => $form->createView()
         ]);
     }
 

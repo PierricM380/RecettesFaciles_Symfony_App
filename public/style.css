@@ -107,6 +107,7 @@ button {
 /* NAVIGATION BAR */
 nav {
     background: var(--orange-light);
+    transition: 0.3s ease;
 }
 
 nav ul {

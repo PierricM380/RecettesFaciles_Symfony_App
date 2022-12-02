@@ -182,7 +182,7 @@ header section h1 {
 .home {
     display: flex;
     justify-content: center;
-    padding-top: 25px;
+    padding-top: 75px;
 }
 
 .home h2 {

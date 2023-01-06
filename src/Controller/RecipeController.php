@@ -18,6 +18,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class RecipeController extends AbstractController
 {
+    /**
+     * Display list of all recipes and a searching specific recipe
+     *
+     * @param RecipeRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
+     */
     #[IsGranted('ROLE_USER')]
     #[Route('/recette', name: 'recipe.index', methods: ['GET'])]
     public function index(RecipeRepository $repository, PaginatorInterface $paginator, Request $request): Response
@@ -38,6 +46,12 @@ class RecipeController extends AbstractController
         ]);
     }
 
+    /**
+     * Display appetizer recipes
+     *
+     * @param RecipeRepository $repository
+     * @return Response
+     */
     #[Route('/recette/aperitifs', name: 'recipe.show.appetizer', methods: ['GET'])]
     public function showAppetizer(RecipeRepository $repository): Response
     {
@@ -50,6 +64,12 @@ class RecipeController extends AbstractController
         ]);
     }
 
+    /**
+     * Display dish recipes
+     *
+     * @param RecipeRepository $repository
+     * @return Response
+     */
     #[Route('/recette/plats', name: 'recipe.show.dish', methods: ['GET'])]
     public function showdish(RecipeRepository $repository): Response
     {
@@ -62,6 +82,12 @@ class RecipeController extends AbstractController
         ]);
     }
 
+    /**
+     * Display desserts recipes
+     *
+     * @param RecipeRepository $repository
+     * @return Response
+     */
     #[Route('/recette/desserts', name: 'recipe.show.dessert', methods: ['GET'])]
     public function showDessert(RecipeRepository $repository): Response
     {
@@ -74,6 +100,13 @@ class RecipeController extends AbstractController
         ]);
     }
 
+    /**
+     * Create a recipe with form template
+     *
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
     #[IsGranted('ROLE_USER')]
     #[Route('/recette/creation', name: 'recipe.new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $manager): Response
@@ -102,6 +135,14 @@ class RecipeController extends AbstractController
         ]);
     }
 
+    /**
+     * Edit recipe with form template
+     *
+     * @param Recipe $recipe
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
     #[Security("is_granted('ROLE_USER')")]
     #[Route('/recette/edition/{id}', 'recipe.edit', methods: ['GET', 'POST'])]
     public function edit(Recipe $recipe, Request $request, EntityManagerInterface $manager): Response
@@ -128,6 +169,13 @@ class RecipeController extends AbstractController
         ]);
     }
 
+    /**
+     * Delete selected recipe
+     *
+     * @param EntityManagerInterface $manager
+     * @param Recipe $recipe
+     * @return Response
+     */
     #[Security("is_granted('ROLE_USER')")]
     #[Route('/recette/suppression/{id}', 'recipe.delete', methods: ['GET'])]
     public function delete(EntityManagerInterface $manager, Recipe $recipe): Response

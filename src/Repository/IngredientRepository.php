@@ -22,6 +22,13 @@ class IngredientRepository extends ServiceEntityRepository
         parent::__construct($registry, Ingredient::class);
     }
 
+    /**
+     * Add ingredient into database
+     *
+     * @param Ingredient $entity
+     * @param boolean $flush
+     * @return void
+     */
     public function add(Ingredient $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
@@ -31,6 +38,13 @@ class IngredientRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * remove ingredient from database
+     *
+     * @param Ingredient $entity
+     * @param boolean $flush
+     * @return void
+     */
     public function remove(Ingredient $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
@@ -40,6 +54,12 @@ class IngredientRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * Search ingredient
+     *
+     * @param SearchIngredient $search
+     * @return array
+     */
     public function searchIngredient(SearchIngredient $search): array
     {
         $query = $this

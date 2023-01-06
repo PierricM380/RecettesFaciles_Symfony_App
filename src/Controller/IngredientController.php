@@ -18,6 +18,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class IngredientController extends AbstractController
 {
+    /**
+     * Display list of ingredients
+     *
+     * @param IngredientRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
+     */
     #[IsGranted('ROLE_USER')]
     #[Route('/ingredient', name: 'ingredient.index', methods: ['GET'])]
     public function index(IngredientRepository $repository, PaginatorInterface $paginator, Request $request): Response
@@ -38,6 +46,13 @@ class IngredientController extends AbstractController
         ]);
     }
 
+    /**
+     * Display form add ingredient
+     *
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
     #[IsGranted('ROLE_USER')]
     #[Route('/ingredient/nouveau', name: 'ingredient.new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $manager): Response
@@ -66,6 +81,14 @@ class IngredientController extends AbstractController
         ]);
     }
 
+    /**
+     * Edit ingredient page 
+     *
+     * @param Ingredient $ingredient
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
     #[Security("is_granted('ROLE_USER')")]
     #[Route('/ingredient/edition/{id}', name: 'ingredient.edit', methods: ['GET', 'POST'])]
     public function edit(Ingredient $ingredient, Request $request, EntityManagerInterface $manager): Response
@@ -93,6 +116,13 @@ class IngredientController extends AbstractController
         ]);
     }
 
+    /**
+     * Delete ingredient
+     *
+     * @param EntityManagerInterface $manager
+     * @param Ingredient $ingredient
+     * @return Response
+     */
     #[Security("is_granted('ROLE_USER')")]
     #[Route('/ingredient/suppression/{id}', 'ingredient.delete', methods: ['GET'])]
     public function delete(EntityManagerInterface $manager, Ingredient $ingredient): Response

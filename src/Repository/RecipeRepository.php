@@ -22,6 +22,13 @@ class RecipeRepository extends ServiceEntityRepository
         parent::__construct($registry, Recipe::class);
     }
 
+    /**
+     * Add recipe into database
+     *
+     * @param Recipe $entity
+     * @param boolean $flush
+     * @return void
+     */
     public function add(Recipe $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
@@ -31,6 +38,13 @@ class RecipeRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * Remove recipe from database
+     *
+     * @param Recipe $entity
+     * @param boolean $flush
+     * @return void
+     */
     public function remove(Recipe $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
@@ -40,6 +54,12 @@ class RecipeRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * Search recipe
+     *
+     * @param searchRecipe $search
+     * @return array
+     */
     public function searchRecipe(searchRecipe $search): array
     {
         $query = $this

@@ -19,3 +19,4 @@
 ###< symfony/phpunit-bridge ###
 migrations/Version20221121062921.php
 migrations/Version20221121062921.php
+.env

@@ -21,17 +21,22 @@ class AppFixtures extends Fixture
         $this->faker = Factory::create('fr_FR');
     }
 
-
+/**
+ * Load user
+ *
+ * @param ObjectManager $manager
+ * @return void
+ */
     public function load(ObjectManager $manager): void
     {
         // User
         $user = new User();
         $user
-            ->setFullName("Ghislaine Marye")
-            ->setPseudo("Gigi66380")
-            ->setEmail("ghislaine.marye@gmail.com")
+            ->setFullName("Prénom Nom")
+            ->setPseudo("Pseudo")
+            ->setEmail("example@example.fr")
             ->setRoles(['ROLE_USER'])
-            ->setPlainPassword('!PGEL?66380');
+            ->setPlainPassword('Password');
 
         $manager->persist($user);
         $manager->flush();
